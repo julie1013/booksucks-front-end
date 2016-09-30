@@ -30,7 +30,7 @@ img {
   border: 1px solid $black;
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: -200px;
+  margin-top: -170px;
   text-align: center;
   width: 494px;
 };
@@ -46,13 +46,22 @@ img {
 }
 
 .sign-up-form,
-.sign-in-form {
+.sign-in-form,
+.change-password-form {
   margin-left: 35px;
   width: 154px;
 }
 
+.sign-out-button {
+  margin-left: 35px;
+}
+
 .sign-up-form {
   margin-bottom: 10px;
+}
+
+.change-password-form {
+  margin-top: 10px;
 }
 
 .sucks {
