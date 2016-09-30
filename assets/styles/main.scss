@@ -1,3 +1,5 @@
+$black: #000;
+
 .clearfix::after {
   clear: both;
   content: ' ';
@@ -10,3 +12,26 @@
 body {
   min-width: 1400px;
   }
+
+.book-burn {
+  @include box-sizing(content-box);
+  border: 1px solid $black;
+  margin: 0 auto;
+  text-align: center;
+  width: 659px;
+};
+
+.quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
+
+.reviewer {
+  font-family: 'Bad Script', cursive;
+  font-size: 20px;
+}
+
+.sucks {
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
+}
