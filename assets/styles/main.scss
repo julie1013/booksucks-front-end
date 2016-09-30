@@ -16,6 +16,8 @@ body {
 h1 {
   font-family: 'Bangers', cursive;
   font-size: 50px;
+  margin-left: 20px;
+  width: 320px;
   }
 
 img {
@@ -28,13 +30,14 @@ img {
   border: 1px solid $black;
   border-radius: 10px;
   margin: 0 auto;
+  margin-top: -200px;
   text-align: center;
   width: 494px;
 };
 
 .quote {
   font-family: 'Dancing Script', cursive;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .reviewer {
@@ -42,7 +45,17 @@ img {
   font-size: 20px;
 }
 
+.sign-up-form,
+.sign-in-form {
+  margin-left: 35px;
+  width: 154px;
+}
+
+.sign-up-form {
+  margin-bottom: 10px;
+}
+
 .sucks {
   font-family: 'Bangers', cursive;
-  font-size: 25px;
+  font-size: 30px;
 }
