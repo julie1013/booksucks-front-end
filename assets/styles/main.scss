@@ -20,6 +20,10 @@ h1 {
   width: 320px;
   }
 
+h4 {
+  text-align: center;
+}
+
 img {
   border-radius: 10px 10px 0 0;
   width: 494px;
@@ -67,4 +71,10 @@ img {
 .sucks {
   font-family: 'Bangers', cursive;
   font-size: 30px;
+}
+
+.qualified-books {
+  border: 1px solid $black;
+  margin: 0 auto;
+  width: 30%;
 }

@@ -16,6 +16,7 @@ const onSignInSuccess = function (data) {
     $('#sign-up').hide();
     $('#sign-out').show();
     $('#change-password').show();
+    $('#qualified-books-list').show();
 };
 
 const onSignOutSuccess = function (){
@@ -25,6 +26,7 @@ const onSignOutSuccess = function (){
   console.log("You are now signed out.");
   $('#sign-out').hide();
   $('#change-password').hide();
+  $('#qualified-books-list').hide();
   $('#sign-in').show();
   $('#sign-up').show();
   $('#book-burn-pic').show();

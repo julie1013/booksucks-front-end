@@ -9,4 +9,5 @@ $(document).ready(function () {
   $('#change-password').on('submit', events.onChangePassword);
   $('#sign-out').hide();
   $('#change-password').hide();
+  $('#qualified-books-list').hide();
 });
