@@ -1,0 +1,42 @@
+{
+  "name": "ga-wdi-boston.js-template",
+  "version": "0.0.2",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "clone": "*",
+    "css-loader": "*",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "bootstrap-sass": "*",
+    "clone": "*",
+    "css-loader": "*",
+    "expose-loader": "*",
+    "file-loader": "*",
+    "grunt": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-jscs": "*",
+    "grunt-jsonlint": "*",
+    "grunt-nodemon": "*",
+    "grunt-open": "*",
+    "grunt-webpack": "*",
+    "handlebars": "*",
+    "handlebars-loader": "*",
+    "html-loader": "*",
+    "load-grunt-config": "*",
+    "node-libs-browser": "*",
+    "node-sass": "*",
+    "sass-loader": "*",
+    "style-loader": "*",
+    "time-grunt": "*",
+    "url-loader": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*"
+  }
+}
