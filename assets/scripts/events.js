@@ -12,6 +12,19 @@ const onSignUp = function (event) {
   .fail(ui.onError);
 };
 
+const onSignIn = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  // $('#sign-in').hide();
+  // $('#sign-up').hide();
+  // $('#sign-out').show();
+  // $('#change-password').show();
+  api.signIn(data)
+    .done(ui.onSignInSuccess)
+    .fail(ui.onError);
+};
+
 module.exports = {
   onSignUp,
+  onSignIn,
 };
