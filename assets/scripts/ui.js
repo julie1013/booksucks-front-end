@@ -11,8 +11,10 @@ const onSignUpSuccess = function (data) {
 const onSignInSuccess = function (data) {
     app.user = data.user;
     console.log("You are now signed in");
-    // $('#sign-out').show();
-    // $('#change-password').show();
+    $('#sign-in').hide();
+    $('#sign-up').hide();
+    $('#sign-out').show();
+    $('#change-password').show();
 };
 
 const onSignOutSuccess = function (){
@@ -20,6 +22,10 @@ const onSignOutSuccess = function (){
   $('#change-password').hide();
   app.user = null;
   console.log("You are now signed out.");
+  $('#sign-out').hide();
+  $('#change-password').hide();
+  $('#sign-in').show();
+  $('#sign-up').show();
 };
 
 const onChangePasswordSuccess = function (){
