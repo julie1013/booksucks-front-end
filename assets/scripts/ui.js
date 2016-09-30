@@ -11,6 +11,7 @@ const onSignUpSuccess = function (data) {
 const onSignInSuccess = function (data) {
     app.user = data.user;
     console.log("You are now signed in");
+    $('#book-burn-pic').hide();
     $('#sign-in').hide();
     $('#sign-up').hide();
     $('#sign-out').show();
@@ -26,6 +27,7 @@ const onSignOutSuccess = function (){
   $('#change-password').hide();
   $('#sign-in').show();
   $('#sign-up').show();
+  $('#book-burn-pic').show();
 };
 
 const onChangePasswordSuccess = function (){
