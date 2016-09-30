@@ -15,6 +15,18 @@ const onSignInSuccess = function (data) {
     // $('#change-password').show();
 };
 
+const onSignOutSuccess = function (){
+  $('#sign-out').hide();
+  $('#change-password').hide();
+  app.user = null;
+  console.log("You are now signed out.");
+};
+
+const onChangePasswordSuccess = function (){
+  $('.display-stats').html("Password successfully changed.");
+  console.log("Password successfully changed.");
+};
+
 const onError = function (response) {
   $('.display-stats').html(response);
 };
@@ -23,4 +35,6 @@ module.exports = {
   onSignUpSuccess,
   onError,
   onSignInSuccess,
+  onSignOutSuccess,
+  onChangePasswordSuccess,
 };
