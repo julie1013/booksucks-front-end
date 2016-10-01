@@ -35,9 +35,19 @@ const onChangePassword = function (event) {
     .fail(ui.onError);
 };
 
+const onAddToMyToReadList = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.addToMyToReadList(data)
+    .done(ui.onAddToMyToReadListSuccess)
+    .fail(ui.onError);
+  };
+
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
+  onAddToMyToReadList,
 };

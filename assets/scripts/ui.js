@@ -16,7 +16,7 @@ const onSignInSuccess = function (data) {
     $('#sign-up').hide();
     $('#sign-out').show();
     $('#change-password').show();
-    $('#qualified-books-list').show();
+    $('#to-read-list').show();
 };
 
 const onSignOutSuccess = function (){
@@ -26,7 +26,7 @@ const onSignOutSuccess = function (){
   console.log("You are now signed out.");
   $('#sign-out').hide();
   $('#change-password').hide();
-  $('#qualified-books-list').hide();
+  $('#to-read-list').hide();
   $('#sign-in').show();
   $('#sign-up').show();
   $('#book-burn-pic').show();
@@ -35,6 +35,11 @@ const onSignOutSuccess = function (){
 const onChangePasswordSuccess = function (){
   $('.display-stats').html("Password successfully changed.");
   console.log("Password successfully changed.");
+};
+
+const onAddToMyToReadListSuccess = function (){
+  console.log("hi");
+  // console.log(app.data, " is data");
 };
 
 const onError = function (response) {
@@ -47,4 +52,5 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
+  onAddToMyToReadListSuccess,
 };

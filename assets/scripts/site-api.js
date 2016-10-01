@@ -41,10 +41,19 @@ const changePassword = function(data){
   });
 };
 
+const addToMyToReadList = function(data){
+  return $.ajax({
+    url: app.host + '/qualified_books',
+    method: 'POST',
+    data: data,
+  });
+};
+
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  addToMyToReadList,
 };
