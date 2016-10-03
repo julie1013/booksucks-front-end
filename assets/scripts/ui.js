@@ -12,7 +12,7 @@ const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.length; i++){
     id = i + 1;
-    $('.master-list ol').append('<li id=' + id + '>' + data[i].title + '<form>'+
+    $('.master-list ol').append('<li id=' + id + '>' + data[i].title + ', by ' + data[i].author + '<form>'+
       '<input type=submit value="Add to your to-read list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form></li>');
   }
 };
@@ -49,7 +49,7 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (data){
-  $('.to-read ol').append('<li>' + data.title + '<form>'+
+  $('.to-read ol').append('<li>' + data.title + ', by ' + data.author + '<form>'+
     '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' + '</form>' + '</li>');
 };
 
