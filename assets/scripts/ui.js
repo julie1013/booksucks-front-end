@@ -17,6 +17,7 @@ const onSignInSuccess = function (data) {
     $('#sign-out').show();
     $('#change-password').show();
     $('#to-read-list').show();
+    $('#show-my-to-read-list').show();
 };
 
 const onSignOutSuccess = function (){
@@ -38,8 +39,12 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (){
-  console.log("hi");
+  // console.log("hi");
   // console.log(app.data, " is data");
+};
+
+const onShowMyToReadListSuccess = function (data){
+  console.log(data);
 };
 
 const onError = function (response) {
@@ -53,4 +58,5 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
+  onShowMyToReadListSuccess,
 };

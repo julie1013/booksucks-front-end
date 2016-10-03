@@ -43,6 +43,14 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
+  const onShowMyToReadList = function (event) {
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    api.showMyToReadList(data)
+    .done(ui.onShowMyToReadListSuccess)
+    .fail(ui.onError);
+  };
+
 
 module.exports = {
   onSignUp,
@@ -50,4 +58,5 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onAddToMyToReadList,
+  onShowMyToReadList,
 };
