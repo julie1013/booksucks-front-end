@@ -8,6 +8,15 @@ const onSignUpSuccess = function (data) {
   }
 };
 
+const showMasterList = function (){
+  let masterList = $('#master-ordered-list');
+  for (let i = 0; i < masterList.length; i++){
+    $('li').append('<form class="add-to-list">' +
+      '<id="add-to-my-to-read-list">' + '<input type="submit" id ="list-item"' +
+      'value = "Add to your to-read list">');
+  }
+};
+
 const onSignInSuccess = function (data) {
     app.user = data.user;
     console.log("You are now signed in");
@@ -18,6 +27,7 @@ const onSignInSuccess = function (data) {
     $('#change-password').show();
     $('#to-read-list').show();
     $('#show-my-to-read-list').show();
+    showMasterList();
 };
 
 const onSignOutSuccess = function (){
