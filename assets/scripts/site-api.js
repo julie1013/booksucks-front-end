@@ -41,12 +41,11 @@ const changePassword = function(data){
   });
 };
 
-const addToMyToReadList = function(data){
-  let bookID = app.books.id;
+const addToMyToReadList = function(id){
   return $.ajax({
-    url: app.host + '/books/' + bookID,
+    url: app.host + '/books/' + id,
     method: 'POST',
-    data: data,
+    // data: data,
   });
 };
 
