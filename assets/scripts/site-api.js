@@ -52,7 +52,7 @@ const addToMyToReadList = function(data){
 const showMyToReadList = function () {
   let userID = app.user.id;
   return $.ajax({
-    url: app.host + '/users/' + userID,
+    url: app.host + '/users/' + userID + '/books',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,

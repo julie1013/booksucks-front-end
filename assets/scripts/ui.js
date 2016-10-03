@@ -43,8 +43,11 @@ const onAddToMyToReadListSuccess = function (){
   // console.log(app.data, " is data");
 };
 
+
 const onShowMyToReadListSuccess = function (data){
-  console.log(data);
+  for(let i = 0; i < data.length; i++){
+    $('.to-read').append(data[i].title);
+  }
 };
 
 const onError = function (response) {
