@@ -51,6 +51,10 @@ const addToMyToReadList = function(id){
   });
 };
 
+// const removeBookFromMyToReadList = function (){
+//
+// };
+
 const showMyToReadList = function () {
   let userID = app.user.id;
   return $.ajax({

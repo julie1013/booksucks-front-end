@@ -52,6 +52,15 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
+  const onRemoveBookFromMyToReadList = function(event) {
+    event.preventDefault();
+    $(this).parent().remove();
+    // ui.onRemoveBookFromMyToReadListSuccess();
+    // api.removeBookFromMyToReadList()
+    // .done(ui.removeBookFromMyToReadList)
+    // .fail(ui.onError);
+  };
+
 
 module.exports = {
   onSignUp,
@@ -60,4 +69,5 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onShowMyToReadList,
+  onRemoveBookFromMyToReadList,
 };

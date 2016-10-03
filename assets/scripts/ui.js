@@ -49,8 +49,13 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (data){
-  $('.to-read').append(data.title);
+  $('.to-read ol').append('<li>' + data.title + '<form>'+
+    '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' + '</form>' + '</li>');
 };
+
+// const onRemoveBookFromMyToReadListSuccess = function (){
+//   $('.to-read ol li').html('');
+// };
 
 
 const onShowMyToReadListSuccess = function (data){
@@ -71,4 +76,5 @@ module.exports = {
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
   onShowMyToReadListSuccess,
+  // onRemoveBookFromMyToReadListSuccess,
 };
