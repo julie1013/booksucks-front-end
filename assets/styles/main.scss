@@ -20,6 +20,10 @@ h1 {
   width: 320px;
   }
 
+h3 {
+  text-align: center;
+}
+
 h4 {
   text-align: center;
 }
@@ -75,17 +79,35 @@ img {
 
 .to-read {
   border: 1px solid $black;
+  clear: both;
+  float: right;
   margin: 0 auto;
+  margin-right: 50px;
+  margin-top: -455px;
   width: 30%;
 }
 
 .show-my-to-read-list-button {
-  margin: 0 auto;
-  margin-top: 20px;
   width: 10%;
 }
 
-.add-to-list,
 .add-button {
   margin-left: 20px;
 }
+
+.master-list {
+  border: 1px solid $black;
+  margin: 0 auto;
+  margin-top: -100px;
+  text-align: left;
+  width: 30%;
+}
+
+// .master-list-items li {
+//   clear: both;
+//   float: left;
+// }
+
+// .add-to-my-to-read-list-button {
+//   margin-right: -1000px;
+// }

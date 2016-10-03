@@ -42,8 +42,9 @@ const changePassword = function(data){
 };
 
 const addToMyToReadList = function(data){
+  let bookID = app.books.id;
   return $.ajax({
-    url: app.host + '/qualified_books',
+    url: app.host + '/books/' + bookID,
     method: 'POST',
     data: data,
   });

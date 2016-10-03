@@ -7,10 +7,11 @@ $(document).ready(function () {
   $('#sign-in').on('submit', events.onSignIn);
   $('#sign-out').on('submit', events.onSignOut);
   $('#change-password').on('submit', events.onChangePassword);
-  $('#add-to-my-to-read-list').on('submit', events.onAddToMyToReadList);
+  $('li').on('submit', 'form', events.onAddToMyToReadList);
   $('#show-my-to-read-list').on('submit', events.onShowMyToReadList);
   $('#show-my-to-read-list').hide();
   $('#sign-out').hide();
   $('#change-password').hide();
+  $('#master-book-list').hide();
   $('#to-read-list').hide();
 });

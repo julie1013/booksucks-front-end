@@ -11,9 +11,8 @@ const onSignUpSuccess = function (data) {
 const showMasterList = function (){
   let masterList = $('#master-ordered-list');
   for (let i = 0; i < masterList.length; i++){
-    $('li').append('<form class="add-to-list">' +
-      '<id="add-to-my-to-read-list">' + '<input type="submit" id ="list-item"' +
-      'value = "Add to your to-read list">');
+    $('li').append('<form>'+
+      '<input type=submit value="Add to your list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form>');
   }
 };
 
@@ -28,6 +27,7 @@ const onSignInSuccess = function (data) {
     $('#to-read-list').show();
     $('#show-my-to-read-list').show();
     showMasterList();
+    $('#master-book-list').show();
 };
 
 const onSignOutSuccess = function (){
@@ -49,7 +49,7 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (){
-  // console.log("hi");
+  console.log("hi");
   // console.log(app.data, " is data");
 };
 
