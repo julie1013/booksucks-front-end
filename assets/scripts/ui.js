@@ -48,9 +48,8 @@ const onChangePasswordSuccess = function (){
   console.log("Password successfully changed.");
 };
 
-const onAddToMyToReadListSuccess = function (){
-  console.log("hi");
-  // console.log(app.data, " is data");
+const onAddToMyToReadListSuccess = function (data){
+  $('.to-read').append(data.title);
 };
 
 

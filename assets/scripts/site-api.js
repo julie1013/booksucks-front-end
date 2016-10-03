@@ -44,8 +44,10 @@ const changePassword = function(data){
 const addToMyToReadList = function(id){
   return $.ajax({
     url: app.host + '/books/' + id,
-    method: 'POST',
-    // data: data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
