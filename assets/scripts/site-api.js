@@ -58,6 +58,13 @@ const showMasterList = function(){
   });
 };
 
+const readReviews = function(){
+  return $.ajax({
+    url: app.host + '/reviews',
+    method: 'GET',
+  });
+};
+
 // const removeBookFromMyToReadList = function (){
 //
 // };
@@ -71,4 +78,5 @@ module.exports = {
   changePassword,
   addToMyToReadList,
   showMasterList,
+  readReviews,
 };

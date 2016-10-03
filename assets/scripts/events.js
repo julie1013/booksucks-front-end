@@ -59,6 +59,13 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.error);
   };
 
+  const onReadReviews = function(){
+    let id = $(this).parent().attr('id');
+    api.readReviews(id)
+    .done(ui.onReadReviewsSuccess)
+    .fail(ui.error);
+  };
+
 
 module.exports = {
   onSignUp,
@@ -68,4 +75,5 @@ module.exports = {
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
   onShowMasterList,
+  onReadReviews,
 };

@@ -34,6 +34,10 @@ img {
   width: 494px;
 }
 
+li {
+  border-bottom: 1px solid $black;
+}
+
 .book-burn {
   @include box-sizing(content-box);
   border: 1px solid $black;
@@ -84,7 +88,7 @@ img {
   float: right;
   margin: 0 auto;
   margin-right: 50px;
-  margin-top: -455px;
+  margin-top: -1088px;
   width: 30%;
 }
 
@@ -108,4 +112,13 @@ img {
 .author {
   font-family: 'Bangers', cursive;
   font-size: 20px;
+}
+
+.field {
+  height: 500px;
+  width: 500px;
+}
+
+.review-prompt-button {
+  margin-left: 350px;
 }
