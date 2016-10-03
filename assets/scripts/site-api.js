@@ -51,6 +51,13 @@ const addToMyToReadList = function(id){
   });
 };
 
+const showMasterList = function(){
+  return $.ajax({
+  url: app.host + '/books',
+  method: 'GET',
+  });
+};
+
 // const removeBookFromMyToReadList = function (){
 //
 // };
@@ -63,4 +70,5 @@ module.exports = {
   signOut,
   changePassword,
   addToMyToReadList,
+  showMasterList,
 };

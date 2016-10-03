@@ -53,6 +53,12 @@ const onAddToMyToReadList = function (event) {
     // .fail(ui.onError);
   };
 
+  const onShowMasterList = function(){
+    api.showMasterList()
+    .done(ui.onShowMasterListSuccess)
+    .fail(ui.error);
+  };
+
 
 module.exports = {
   onSignUp,
@@ -61,4 +67,5 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
+  onShowMasterList,
 };

@@ -8,11 +8,12 @@ const onSignUpSuccess = function (data) {
   }
 };
 
-const showMasterList = function (){
-  let masterList = $('#master-ordered-list');
-  for (let i = 0; i < masterList.length; i++){
-    $('li').append('<form>'+
-      '<input type=submit value="Add to your list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form>');
+const onShowMasterListSuccess = function (data){
+  let id;
+  for (let i = 0; i < data.length; i++){
+    id = i + 1;
+    $('.master-list ol').append('<li id=' + id + '>' + data[i].title + '<form>'+
+      '<input type=submit value="Add to your to-read list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form></li>');
   }
 };
 
@@ -25,8 +26,7 @@ const onSignInSuccess = function (data) {
     $('#sign-out').show();
     $('#change-password').show();
     $('#to-read-list').show();
-    $('#show-my-to-read-list').show();
-    showMasterList();
+    $('#to-read-list h4').show();
     $('#master-book-list').show();
 };
 
@@ -68,5 +68,6 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
+  onShowMasterListSuccess,
   // onRemoveBookFromMyToReadListSuccess,
 };

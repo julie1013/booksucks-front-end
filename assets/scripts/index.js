@@ -12,6 +12,7 @@ $(document).ready(function () {
   $('#show-my-to-read-list').hide();
   $('#sign-out').hide();
   $('#change-password').hide();
+  events.onShowMasterList();
   $('#master-book-list').hide();
   $('#to-read-list').hide();
 });
