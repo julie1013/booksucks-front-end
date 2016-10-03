@@ -11,7 +11,7 @@ const onSignUpSuccess = function (data) {
 const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.length; i++){
-    id = i + 1;
+    id = parseFloat(data[i].id);
     $('.master-list ol').append('<li id=' + id + '>' + '<span class=title>' + data[i].title +'</span>' + ' , by ' + '<span class=author>' +  data[i].author + '</span>' + '<form>'+
       '<input type=submit value="Add to your to-read list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form></li>');
   }
