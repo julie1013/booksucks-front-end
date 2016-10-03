@@ -21,6 +21,7 @@ h1 {
   }
 
 h3 {
+  font-family: 'Bangers', cursive;
   text-align: center;
 }
 
@@ -99,11 +100,12 @@ img {
   width: 30%;
 }
 
-// .master-list-items li {
-//   clear: both;
-//   float: left;
-// }
+.title {
+  font-family: 'Bad Script', cursive;
+  font-size: 20px;
+}
 
-// .add-to-my-to-read-list-button {
-//   margin-right: -1000px;
-// }
+.author {
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+}
