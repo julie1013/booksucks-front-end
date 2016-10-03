@@ -57,13 +57,6 @@ const onAddToMyToReadListSuccess = function (data){
 //   $('.to-read ol li').html('');
 // };
 
-
-const onShowMyToReadListSuccess = function (data){
-  for(let i = 0; i < data.length; i++){
-    $('.to-read').append(data[i].title);
-  }
-};
-
 const onError = function (response) {
   $('.display-stats').html(response);
 };
@@ -75,6 +68,5 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
-  onShowMyToReadListSuccess,
   // onRemoveBookFromMyToReadListSuccess,
 };

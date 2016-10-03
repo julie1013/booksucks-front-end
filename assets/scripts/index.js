@@ -9,7 +9,6 @@ $(document).ready(function () {
   $('#change-password').on('submit', events.onChangePassword);
   $('li').on('submit', 'form', events.onAddToMyToReadList);
   $('#to-read-list').on('submit', 'form', events.onRemoveBookFromMyToReadList);
-  $('#show-my-to-read-list').on('submit', events.onShowMyToReadList);
   $('#show-my-to-read-list').hide();
   $('#sign-out').hide();
   $('#change-password').hide();

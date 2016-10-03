@@ -55,16 +55,6 @@ const addToMyToReadList = function(id){
 //
 // };
 
-const showMyToReadList = function () {
-  let userID = app.user.id;
-  return $.ajax({
-    url: app.host + '/users/' + userID + '/books',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
 
 
 module.exports = {
@@ -73,5 +63,4 @@ module.exports = {
   signOut,
   changePassword,
   addToMyToReadList,
-  showMyToReadList,
 };
