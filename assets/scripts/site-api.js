@@ -58,6 +58,13 @@ const showMasterList = function(){
   });
 };
 
+const showMyToReadList = function(data){
+  let userID = data.users.id;
+  return $.ajax({
+    url: app.host + '/users/' + '/books',
+  });
+};
+
 const readReviews = function(id){
   return $.ajax({
     url: app.host + '/reviews',
@@ -65,9 +72,7 @@ const readReviews = function(id){
   });
 };
 
-// const removeBookFromMyToReadList = function (){
-//
-// };
+
 
 
 
@@ -79,4 +84,5 @@ module.exports = {
   addToMyToReadList,
   showMasterList,
   readReviews,
+  showMyToReadList,
 };

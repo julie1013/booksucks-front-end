@@ -44,6 +44,16 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
+  const onShowMyToReadList = function (event){
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    console.log("this is", data);
+    api.showMyToReadList(data)
+    .done(ui.onPopulateMyListSuccess)
+    .fail(ui.onError);
+  };
+
+
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
     $(this).parent().remove();
@@ -53,18 +63,19 @@ const onAddToMyToReadList = function (event) {
     // .fail(ui.onError);
   };
 
-  const onShowMasterList = function(){
+  const onShowMasterList = function (){
     api.showMasterList()
     .done(ui.onShowMasterListSuccess)
     .fail(ui.error);
   };
 
-  const onReadReviews = function(){
+  const onReadReviews = function (){
     let id = $(this).parent().attr('id');
     api.readReviews(id)
     .done(ui.onReadReviewsSuccess)
     .fail(ui.error);
   };
+
 
   // const onWriteReviews = function(event){
   //   event.preventDefault();
@@ -81,4 +92,5 @@ module.exports = {
   onRemoveBookFromMyToReadList,
   onShowMasterList,
   onReadReviews,
+  onShowMyToReadList,
 };

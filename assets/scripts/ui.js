@@ -24,6 +24,20 @@ const onShowMasterListSuccess = function (data){
   }
 };
 
+const onError = function (response) {
+  $('.display-stats').html(response);
+};
+
+const onShowMyToReadListSuccess = function (data){
+  let id;
+  for(let i = 0; i < data.length; i++){
+    id = parseFloat(data[i].id);
+    $('#to-read-list').append('<li id=' + id + '>' +
+    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
+    '<span class=author>' +  data[i].author + '</span>');
+  }
+};
+
 const onSignInSuccess = function (data) {
     app.user = data.user;
     console.log("You are now signed in");
@@ -35,7 +49,7 @@ const onSignInSuccess = function (data) {
     $('#to-read-list').show();
     $('#to-read-list h4').show();
     $('#master-book-list').show();
-    // $('#review-form').show();
+    $('#show-my-to-read-list').show();
     $('#review-prompt').show();
 };
 
@@ -65,20 +79,14 @@ const onAddToMyToReadListSuccess = function (data){
     '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' + '</form>' + '</li>');
 };
 
-// const onRemoveBookFromMyToReadListSuccess = function (){
-//   $('.to-read ol li').html('');
-// };
-
 const onReadReviewSuccess = function(data){
-  let id = data.user_id;
-  console.log(id);
+  // data.user_id;
+  // console.log(id);
   // $('.to-read ol').html('');
   // $('.to-read ol').append(data.)
 };
 
-const onError = function (response) {
-  $('.display-stats').html(response);
-};
+
 
 module.exports = {
   onSignUpSuccess,
@@ -89,5 +97,6 @@ module.exports = {
   onAddToMyToReadListSuccess,
   onShowMasterListSuccess,
   onReadReviewSuccess,
+  onShowMyToReadListSuccess,
   // onRemoveBookFromMyToReadListSuccess,
 };
