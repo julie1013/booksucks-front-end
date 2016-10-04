@@ -59,8 +59,9 @@ const showMasterList = function(){
 };
 
 const showMyToReadList = function(){
+  let id = app.user.id;
   return $.ajax({
-    url: app.host + '/users/current_user/books',
+    url: app.host + '/users/' + id + '/books',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -77,7 +78,7 @@ const readReviews = function(id){
 
 const submitReview = function(data){
   return  $.ajax({
-    url: app.host + '/reviews/',
+    url: app.host + '/reviews',
     method: "POST",
     data: data,
   });

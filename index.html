@@ -50,9 +50,12 @@
           </span> reviewer</span></p>
     </div>
     <div id="review-form" class="review-form-field signed-in">
-      <form id="write-review-here" class="write-review-here-field">
-        <input type="Submit" value="Submit Review" id="review-button">
-        <input type="text" class="text-field">
+    <form id="write-a-review" class="write-a-review-field">
+      <input name="Title" type="text" placeholder="title" class="review-title"
+      onfocus="this.placeholder =''" value="">
+      <input name="body" type="text"
+        value="" class="review-body">
+        <input type="Submit" value="Submit a review!">
       </form>
     </div>
     <div class="master-list clearfix" id="master-book-list">

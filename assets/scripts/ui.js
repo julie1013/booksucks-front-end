@@ -29,10 +29,10 @@ const onError = function (response) {
 };
 
 const onShowMyToReadListSuccess = function (data){
-  let id;
+  let bookID;
   for(let i = 0; i < data.length; i++){
-    id = parseFloat(data[i].id);
-    $('#to-read-list').append('<li id=' + id + '>' +
+    bookID = parseFloat(data[i].id);
+    $('#to-read-list').append('<li id=' + bookID + '>' +
     '<span class=title>' + data[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data[i].author + '</span>');
   }
@@ -40,7 +40,6 @@ const onShowMyToReadListSuccess = function (data){
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
-    console.log("You are now signed in");
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
     $('#sign-up').hide();
