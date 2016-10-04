@@ -75,9 +75,11 @@ const onAddToMyToReadList = function (event) {
   };
 
   const onSubmitReview = function (event){
+    let bookID = $(this).parent().attr('id');
+    console.log("book ID is", bookID);
     event.preventDefault();
     let data = getFormFields(event.target);
-    api.submitReview(data)
+    api.submitReview(data, bookID)
       .done(ui.onSubmitReviewSuccess)
       .fail(ui.onError);
   };

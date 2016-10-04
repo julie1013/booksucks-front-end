@@ -32,7 +32,7 @@ const onShowMyToReadListSuccess = function (data){
   let bookID;
   for(let i = 0; i < data.length; i++){
     bookID = parseFloat(data[i].id);
-    $('#to-read-list').append('<li id=' + bookID + '>' +
+    $('#to-read-list ol').append('<li id=' + bookID + '>' +
     '<span class=title>' + data[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data[i].author + '</span>');
   }

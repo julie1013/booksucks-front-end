@@ -76,10 +76,14 @@ const readReviews = function(id){
   });
 };
 
-const submitReview = function(data){
+const submitReview = function(data, bookID){
+  let id = app.user.id;
   return  $.ajax({
-    url: app.host + '/reviews',
+    url: app.host + '/users/' + id + '/reviews/' + bookID,
     method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     data: data,
   });
 };
