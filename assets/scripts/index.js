@@ -11,6 +11,7 @@ $(document).ready(function () {
   $('#show-my-to-read-list').hide();
   $('#sign-out').hide();
   $('#change-password').hide();
+  $('#review-form').hide();
   events.onShowMasterList();
   $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
   $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
@@ -18,8 +19,6 @@ $(document).ready(function () {
     event.preventDefault();
     $('#review-form').show();
   });
-  $('#review-form').hide();
   $('#master-book-list').hide();
   $('#to-read-list').hide();
-  // $('#review-form').hide();
 });

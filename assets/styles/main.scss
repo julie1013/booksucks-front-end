@@ -114,11 +114,11 @@ li {
   font-size: 20px;
 }
 
-.field {
-  height: 500px;
-  width: 500px;
-}
-
-.review-prompt-button {
-  margin-left: 350px;
+.review-form-field {
+  border: 1px solid $black;
+  float: left;
+  height: 450px;
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 450px;
 }
