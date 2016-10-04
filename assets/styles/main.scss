@@ -115,10 +115,16 @@ li {
 }
 
 .review-form-field {
+  @include box-sizing(content-box);
   border: 1px solid $black;
   float: left;
   height: 450px;
   margin-left: 20px;
   margin-top: 20px;
+  width: 450px;
+}
+
+.text-field {
+  height: 424px;
   width: 450px;
 }
