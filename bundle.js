@@ -301,7 +301,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'https://booksucks.herokuapp.com/'
+	  host: 'https://booksucks.herokuapp.com'
 	};
 
 	module.exports = app;
