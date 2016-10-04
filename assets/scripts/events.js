@@ -66,6 +66,11 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.error);
   };
 
+  // const onWriteReviews = function(event){
+  //   event.preventDefault();
+  //
+  // };
+
 
 module.exports = {
   onSignUp,

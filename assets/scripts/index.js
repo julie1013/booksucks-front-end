@@ -12,8 +12,13 @@ $(document).ready(function () {
   $('#sign-out').hide();
   $('#change-password').hide();
   events.onShowMasterList();
-  $('.master-list ol').on('submit', 'li.add-to-my-to-read-list-button', events.onAddToMyToReadList);
-  $('.master-list ol').on('submit', 'li.read-button', events.onReadReviews);
+  $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
+  $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
+  $('.master-list ol').on('click', 'li #write', function(event){
+    event.preventDefault();
+    $('#review-form').show();
+  });
+  $('#review-form').hide();
   $('#master-book-list').hide();
   $('#to-read-list').hide();
   // $('#review-form').hide();

@@ -12,9 +12,15 @@ const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.length; i++){
     id = parseFloat(data[i].id);
-    $('.master-list ol').append('<li id=' + id + '>' + '<span class=title>' + data[i].title +'</span>' + ' , by ' + '<span class=author>' +  data[i].author + '</span>' + '<form>'+
-      '<input type=submit value="Add to your to-read list" id=add-to-my-to-read-list class=add-to-my-to-read-list-button>' + '</form>' +
-      '<form>' + '<input type=submit value="Read reviews!" id=read class=read-button>' + '</form>' + '<form>' + '<input type=submit value="Write a scathing review!" id=write class=write-button' + '</form>'+ '</li>');
+    $('.master-list ol').append('<li id=' + id + '>' +
+    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
+    '<span class=author>' +  data[i].author + '</span>' +
+    '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
+      '<input type=submit value="Add to your to-read list">' + '</form>' +
+      '<form id=read class=read-button>' +
+      '<input type=submit value="Read reviews!">' + '</form>' +
+      '<button id=write class=write-button>' + 'Write a scathing review!' +
+      '</button>' + '</li>');
   }
 };
 

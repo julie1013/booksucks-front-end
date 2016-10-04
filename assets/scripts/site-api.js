@@ -58,7 +58,7 @@ const showMasterList = function(){
   });
 };
 
-const readReviews = function(){
+const readReviews = function(id){
   return $.ajax({
     url: app.host + '/reviews',
     method: 'GET',
