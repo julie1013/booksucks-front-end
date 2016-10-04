@@ -46,10 +46,8 @@ const onAddToMyToReadList = function (event) {
 
   const onShowMyToReadList = function (event){
     event.preventDefault();
-    let data = getFormFields(event.target);
-    console.log("this is", data);
-    api.showMyToReadList(data)
-    .done(ui.onPopulateMyListSuccess)
+    api.showMyToReadList()
+    .done(ui.onShowMyToReadListSuccess)
     .fail(ui.onError);
   };
 
@@ -76,6 +74,14 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.error);
   };
 
+  const onSubmitReview = function (event){
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    api.submitReview(data)
+      .done(ui.onSubmitReviewSuccess)
+      .fail(ui.onError);
+  };
+
 
   // const onWriteReviews = function(event){
   //   event.preventDefault();
@@ -93,4 +99,5 @@ module.exports = {
   onShowMasterList,
   onReadReviews,
   onShowMyToReadList,
+  onSubmitReview,
 };

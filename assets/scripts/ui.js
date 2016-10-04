@@ -86,6 +86,10 @@ const onReadReviewSuccess = function(data){
   // $('.to-read ol').append(data.)
 };
 
+const onSubmitReviewSuccess = function(data){
+  console.log(data);
+};
+
 
 
 module.exports = {
@@ -99,4 +103,5 @@ module.exports = {
   onReadReviewSuccess,
   onShowMyToReadListSuccess,
   // onRemoveBookFromMyToReadListSuccess,
+  onSubmitReviewSuccess,
 };

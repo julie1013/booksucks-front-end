@@ -58,10 +58,13 @@ const showMasterList = function(){
   });
 };
 
-const showMyToReadList = function(data){
-  let userID = data.users.id;
+const showMyToReadList = function(){
   return $.ajax({
-    url: app.host + '/users/' + '/books',
+    url: app.host + '/users/current_user/books',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -69,6 +72,14 @@ const readReviews = function(id){
   return $.ajax({
     url: app.host + '/reviews',
     method: 'GET',
+  });
+};
+
+const submitReview = function(data){
+  return  $.ajax({
+    url: app.host + '/reviews/',
+    method: "POST",
+    data: data,
   });
 };
 
@@ -85,4 +96,5 @@ module.exports = {
   showMasterList,
   readReviews,
   showMyToReadList,
+  submitReview,
 };
