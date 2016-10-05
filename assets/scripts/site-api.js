@@ -55,13 +55,19 @@ const showMasterList = function(){
   return $.ajax({
   url: app.host + '/books',
   method: 'GET',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
-const showMyToReadList = function(data){
-  let userID = data.users.id;
+const showMyToReadList = function(){
   return $.ajax({
-    url: app.host + '/users/' + '/books',
+    url: app.host + '/my_books',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -69,6 +75,33 @@ const readReviews = function(id){
   return $.ajax({
     url: app.host + '/reviews',
     method: 'GET',
+  });
+};
+
+const submitReview = function(data, bookID){
+  let id = app.user.id;
+  return  $.ajax({
+    url: app.host + '/users/' + id + '/reviews/' + bookID,
+    method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+const addBackendToReadList = function(data){
+  return $.ajax({
+    url: app.host + '/qualified_books/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: { qualified_books: {
+      user_id: app.user.id,
+      book_id: data.book.id
+      }
+    }
   });
 };
 
@@ -85,4 +118,6 @@ module.exports = {
   showMasterList,
   readReviews,
   showMyToReadList,
+  submitReview,
+  addBackendToReadList,
 };

@@ -46,10 +46,8 @@ const onAddToMyToReadList = function (event) {
 
   const onShowMyToReadList = function (event){
     event.preventDefault();
-    let data = getFormFields(event.target);
-    console.log("this is", data);
-    api.showMyToReadList(data)
-    .done(ui.onPopulateMyListSuccess)
+    api.showMyToReadList()
+    .done(ui.onShowMyToReadListSuccess)
     .fail(ui.onError);
   };
 
@@ -63,17 +61,21 @@ const onAddToMyToReadList = function (event) {
     // .fail(ui.onError);
   };
 
-  const onShowMasterList = function (){
-    api.showMasterList()
-    .done(ui.onShowMasterListSuccess)
-    .fail(ui.error);
-  };
-
   const onReadReviews = function (){
     let id = $(this).parent().attr('id');
     api.readReviews(id)
     .done(ui.onReadReviewsSuccess)
     .fail(ui.error);
+  };
+
+  const onSubmitReview = function (event){
+    let bookID = $(this).parent().attr('id');
+    console.log("book ID is", bookID);
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    api.submitReview(data, bookID)
+      .done(ui.onSubmitReviewSuccess)
+      .fail(ui.onError);
   };
 
 
@@ -90,7 +92,7 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
-  onShowMasterList,
   onReadReviews,
   onShowMyToReadList,
+  onSubmitReview,
 };

@@ -50,9 +50,12 @@
           </span> reviewer</span></p>
     </div>
     <div id="review-form" class="review-form-field signed-in">
-      <form id="write-review-here" class="write-review-here-field">
-        <input type="Submit" value="Submit Review">
-        <input type="text" class="text-field">
+      <form id="write-a-review" class="write-a-review-field">
+        <input name="Title" type="text" placeholder="title" class="review-title"
+        onfocus="this.placeholder =''" value="">
+        <input name="body" type="text"
+          value="" class="review-body">
+          <input type="Submit" value="Submit a review!" id="review-button">
       </form>
     </div>
     <div class="master-list clearfix" id="master-book-list">
@@ -60,8 +63,8 @@
       <ol id="master-ordered-list" class="master-list-items">
       </ol>
     </div>
-    <div class="to-read" id="to-read-list">
-      <ol>
+    <div class="to-read">
+      <ol id="to-read-list">
         <h4>To Read List</h4>
       </ol>
       <form id="show-my-to-read-list" class="show-my-to-read-list-button">

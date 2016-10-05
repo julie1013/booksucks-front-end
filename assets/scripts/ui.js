@@ -1,26 +1,12 @@
 'use strict';
 
 const app = require('./app');
+const masterList = require('./masterlist');
+const addBackend = require('./backendtoread');
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log("You have signed up successfully");
-  }
-};
-
-const onShowMasterListSuccess = function (data){
-  let id;
-  for (let i = 0; i < data.length; i++){
-    id = parseFloat(data[i].id);
-    $('.master-list ol').append('<li id=' + id + '>' +
-    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data[i].author + '</span>' +
-    '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
-      '<input type=submit value="Add to your to-read list">' + '</form>' +
-      '<form id=read class=read-button>' +
-      '<input type=submit value="Read reviews!">' + '</form>' +
-      '<button id=write class=write-button>' + 'Write a scathing review!' +
-      '</button>' + '</li>');
+    console.log(data);
   }
 };
 
@@ -29,18 +15,22 @@ const onError = function (response) {
 };
 
 const onShowMyToReadListSuccess = function (data){
-  let id;
-  for(let i = 0; i < data.length; i++){
-    id = parseFloat(data[i].id);
-    $('#to-read-list').append('<li id=' + id + '>' +
-    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data[i].author + '</span>');
+  console.log(data);
+  let bookID;
+  for(let i = 0; i < data.books.length; i++){
+    bookID = parseFloat(data.books[i].id);
+    console.log(bookID);
+    $('#to-read-list').append('<li id=' + bookID + '>' +
+    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
+    '<span class=author>' +  data.books[i].author + '</span>'+
+    '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
+    '</form>' + ' </li>');
   }
 };
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
-    console.log("You are now signed in");
+    masterList.onShowMasterList();
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
     $('#sign-up').hide();
@@ -70,13 +60,15 @@ const onSignOutSuccess = function (){
 };
 
 const onChangePasswordSuccess = function (){
-  $('.display-stats').html("Password successfully changed.");
   console.log("Password successfully changed.");
 };
 
 const onAddToMyToReadListSuccess = function (data){
-  $('.to-read ol').append('<li>' + '<span class=title>' + data.title +'</span>' + ' , by ' + '<span class=author>' +  data.author + '</span>' + '<form>'+
-    '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' + '</form>' + '</li>');
+  $('.to-read ol').append('<li>' + '<span class=title>' + data.book.title +
+  '</span>' + ' , by ' + '<span class=author>' +  data.book.author + '</span>' +
+  '<form>'+ '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
+   '</form>' + '</li>');
+   addBackend.onAddBackendToReadList(data);
 };
 
 const onReadReviewSuccess = function(data){
@@ -84,6 +76,10 @@ const onReadReviewSuccess = function(data){
   // console.log(id);
   // $('.to-read ol').html('');
   // $('.to-read ol').append(data.)
+};
+
+const onSubmitReviewSuccess = function(data){
+  console.log(data);
 };
 
 
@@ -95,8 +91,8 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
-  onShowMasterListSuccess,
   onReadReviewSuccess,
   onShowMyToReadListSuccess,
   // onRemoveBookFromMyToReadListSuccess,
+  onSubmitReviewSuccess,
 };
