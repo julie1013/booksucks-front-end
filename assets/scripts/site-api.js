@@ -97,11 +97,12 @@ const addBackendToReadList = function(data){
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: { qualified_books: {
+    data: { qualified_book: {
       user_id: app.user.id,
       book_id: data.book.id
       }
-    }
+    },
+    dataType: 'json'
   });
 };
 

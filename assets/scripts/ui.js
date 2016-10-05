@@ -19,7 +19,6 @@ const onShowMyToReadListSuccess = function (data){
   let bookID;
   for(let i = 0; i < data.books.length; i++){
     bookID = parseFloat(data.books[i].id);
-    console.log(bookID);
     $('#to-read-list').append('<li id=' + bookID + '>' +
     '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data.books[i].author + '</span>'+

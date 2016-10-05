@@ -18,8 +18,9 @@ $(document).ready(function () {
   $('.master-list ol').on('click', 'li #write', function(event){
     event.preventDefault();
     let bookID = $(this).closest('li').attr('id');
+    console.log(bookID);
     $('#review-form').show();
-    $('#write-a-review').on('submit', events.onSubmitReview);
+    $('#review-button').on('submit', events.onSubmitReview);
   });
   $('#master-book-list').hide();
   $('#to-read-list').hide();
