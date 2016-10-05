@@ -17,6 +17,7 @@ $(document).ready(function () {
   $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
   $('.master-list ol').on('click', 'li #write', function(event){
     event.preventDefault();
+    let bookID = $(this).closest('li').attr('id');
     $('#review-form').show();
     $('#write-a-review').on('submit', events.onSubmitReview);
   });
