@@ -90,6 +90,21 @@ const submitReview = function(data, bookID){
   });
 };
 
+const addBackendToReadList = function(data){
+  return $.ajax({
+    url: app.host + '/qualified_books/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: { qualified_books: {
+      user_id: app.user.id,
+      book_id: data.book.id
+      }
+    }
+  });
+};
+
 
 
 
@@ -104,4 +119,5 @@ module.exports = {
   readReviews,
   showMyToReadList,
   submitReview,
+  addBackendToReadList,
 };
