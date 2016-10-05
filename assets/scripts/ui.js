@@ -1,26 +1,11 @@
 'use strict';
 
 const app = require('./app');
+const masterList = require('./masterlist');
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log("You have signed up successfully");
-  }
-};
-
-const onShowMasterListSuccess = function (data){
-  let id;
-  for (let i = 0; i < data.length; i++){
-    id = parseFloat(data[i].id);
-    $('.master-list ol').append('<li id=' + id + '>' +
-    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data[i].author + '</span>' +
-    '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
-      '<input type=submit value="Add to your to-read list">' + '</form>' +
-      '<form id=read class=read-button>' +
-      '<input type=submit value="Read reviews!">' + '</form>' +
-      '<button id=write class=write-button>' + 'Write a scathing review!' +
-      '</button>' + '</li>');
+    console.log(data);
   }
 };
 
@@ -30,16 +15,17 @@ const onError = function (response) {
 
 const onShowMyToReadListSuccess = function (data){
   let bookID;
-  for(let i = 0; i < data.length; i++){
+  for(let i = 0; i < data.books.length; i++){
     bookID = parseFloat(data[i].id);
     $('#to-read-list ol').append('<li id=' + bookID + '>' +
-    '<span class=title>' + data[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data[i].author + '</span>');
+    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
+    '<span class=author>' +  data.books[i].author + '</span>');
   }
 };
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
+    masterList.onShowMasterList();
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
     $('#sign-up').hide();
@@ -69,12 +55,12 @@ const onSignOutSuccess = function (){
 };
 
 const onChangePasswordSuccess = function (){
-  $('.display-stats').html("Password successfully changed.");
   console.log("Password successfully changed.");
 };
 
 const onAddToMyToReadListSuccess = function (data){
-  $('.to-read ol').append('<li>' + '<span class=title>' + data.title +'</span>' + ' , by ' + '<span class=author>' +  data.author + '</span>' + '<form>'+
+  console.log(data);
+  $('.to-read ol').append('<li>' + '<span class=title>' + data.book.title +'</span>' + ' , by ' + '<span class=author>' +  data.book.author + '</span>' + '<form>'+
     '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' + '</form>' + '</li>');
 };
 
@@ -98,7 +84,6 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
-  onShowMasterListSuccess,
   onReadReviewSuccess,
   onShowMyToReadListSuccess,
   // onRemoveBookFromMyToReadListSuccess,

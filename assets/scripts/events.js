@@ -61,12 +61,6 @@ const onAddToMyToReadList = function (event) {
     // .fail(ui.onError);
   };
 
-  const onShowMasterList = function (){
-    api.showMasterList()
-    .done(ui.onShowMasterListSuccess)
-    .fail(ui.error);
-  };
-
   const onReadReviews = function (){
     let id = $(this).parent().attr('id');
     api.readReviews(id)
@@ -98,7 +92,6 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
-  onShowMasterList,
   onReadReviews,
   onShowMyToReadList,
   onSubmitReview,

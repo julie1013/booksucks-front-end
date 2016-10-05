@@ -55,13 +55,15 @@ const showMasterList = function(){
   return $.ajax({
   url: app.host + '/books',
   method: 'GET',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
 const showMyToReadList = function(){
-  let id = app.user.id;
   return $.ajax({
-    url: app.host + '/users/' + id + '/books',
+    url: app.host + '/my_books',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
