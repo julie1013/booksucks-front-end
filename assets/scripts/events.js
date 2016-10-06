@@ -68,13 +68,13 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.error);
   };
 
-  const onSubmitReview = function (event){
-    event.preventDefault();
-    let data = getFormFields(event.target);
-    api.submitReview(data)
-      .done(ui.onSubmitReviewSuccess)
-      .fail(ui.onError);
-  };
+  // const onSubmitReview = function (event){
+  //   event.preventDefault();
+  //   let data = getFormFields(event.target);
+  //   api.submitReview(data)
+  //     .done(ui.onSubmitReviewSuccess)
+  //     .fail(ui.onError);
+  // };
 
 
   // const onWriteReviews = function(event){
@@ -92,5 +92,5 @@ module.exports = {
   onRemoveBookFromMyToReadList,
   onReadReviews,
   onShowMyToReadList,
-  onSubmitReview,
+  // onSubmitReview,
 };

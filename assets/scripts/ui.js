@@ -71,20 +71,20 @@ const onAddToMyToReadListSuccess = function (data){
    addBackend.onAddBackendToReadList(data);
 };
 
-const onReadReviewSuccess = function(data){
-  // data.user_id;
-  // console.log(id);
-  // $('.to-read ol').html('');
-  // $('.to-read ol').append(data.)
-};
-
-const onSubmitReviewSuccess = function(data){
-  // console.log(data);
-};
-
 const onRemoveBookFromMyToReadListSuccess = function(data){
   console.log(data);
 };
+
+// const onReadReviewSuccess = function(data){
+//   // data.user_id;
+//   // console.log(id);
+//   // $('.to-read ol').html('');
+//   // $('.to-read ol').append(data.)
+// };
+//
+// const onSubmitReviewSuccess = function(data){
+//   // console.log(data);
+// };
 
 
 
@@ -95,8 +95,8 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
-  onReadReviewSuccess,
   onShowMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
-  onSubmitReviewSuccess,
+  // onSubmitReviewSuccess,
+  // onReadReviewSuccess,
 };
