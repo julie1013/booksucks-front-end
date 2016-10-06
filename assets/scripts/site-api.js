@@ -73,24 +73,6 @@ const showMyToReadList = function(){
   });
 };
 
-const readReviews = function(id){
-  return $.ajax({
-    url: app.host + '/reviews',
-    method: 'GET',
-  });
-};
-
-const submitReview = function(data, bookID){
-  let id = app.user.id;
-  return  $.ajax({
-    url: app.host + '/users/' + id + '/reviews/' + bookID,
-    method: "POST",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: data,
-  });
-};
 
 const addBackendToReadList = function(data){
   return $.ajax({
@@ -125,6 +107,25 @@ const removeBookFromMyToReadList = function(data){
 };
 
 
+// const readReviews = function(id){
+//   return $.ajax({
+//     url: app.host + '/reviews',
+//     method: 'GET',
+//   });
+// };
+//
+// const submitReview = function(data, bookID){
+//   let id = app.user.id;
+//   return  $.ajax({
+//     url: app.host + '/users/' + id + '/reviews/' + bookID,
+//     method: "POST",
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: data,
+//   });
+// };
+
 
 
 
@@ -135,9 +136,9 @@ module.exports = {
   changePassword,
   addToMyToReadList,
   showMasterList,
-  readReviews,
   showMyToReadList,
-  submitReview,
   addBackendToReadList,
   removeBookFromMyToReadList,
+  // readReviews,
+  // submitReview,
 };

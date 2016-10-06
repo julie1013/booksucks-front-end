@@ -61,20 +61,20 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
-  const onReadReviews = function (){
-    let id = $(this).parent().attr('id');
-    api.readReviews(id)
-    .done(ui.onReadReviewsSuccess)
-    .fail(ui.error);
-  };
+  // const onReadReviews = function (){
+  //   let id = $(this).parent().attr('id');
+  //   api.readReviews(id)
+  //   .done(ui.onReadReviewsSuccess)
+  //   .fail(ui.error);
+  // };
 
-  const onSubmitReview = function (event){
-    event.preventDefault();
-    let data = getFormFields(event.target);
-    api.submitReview(data)
-      .done(ui.onSubmitReviewSuccess)
-      .fail(ui.onError);
-  };
+  // const onSubmitReview = function (event){
+  //   event.preventDefault();
+  //   let data = getFormFields(event.target);
+  //   api.submitReview(data)
+  //     .done(ui.onSubmitReviewSuccess)
+  //     .fail(ui.onError);
+  // };
 
 
   // const onWriteReviews = function(event){
@@ -90,7 +90,7 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
-  onReadReviews,
   onShowMyToReadList,
-  onSubmitReview,
+  // onReadReviews,
+  // onSubmitReview,
 };
