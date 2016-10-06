@@ -79,7 +79,7 @@ const onReadReviewSuccess = function(data){
 };
 
 const onSubmitReviewSuccess = function(data){
-  console.log(data);
+  // console.log(data);
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(data){

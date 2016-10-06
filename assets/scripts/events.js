@@ -71,7 +71,7 @@ const onAddToMyToReadList = function (event) {
   const onSubmitReview = function (event){
     event.preventDefault();
     let data = getFormFields(event.target);
-    api.submitReview(data, bookID)
+    api.submitReview(data)
       .done(ui.onSubmitReviewSuccess)
       .fail(ui.onError);
   };

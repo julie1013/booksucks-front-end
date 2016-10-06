@@ -19,11 +19,14 @@ $(document).ready(function () {
   $('.master-list ol').on('click', 'li #write', function(event){
     event.preventDefault();
     let bookID = $(this).closest('li').attr('id');
-    console.log(bookID);
+    let bookIDField = $('<book-id-field>').
+    attr('type', 'hidden').attr('name', 'bookIDNum').val(bookID);
+    $('write-a-review').children().append($(bookIDField));
+    console.log($('write-a-review'));
     $('#review-form').show();
-    $('#review-button').on('submit', events.onSubmitReview);
+    $('#write-a-review').on('submit', events.onSubmitReview);
   });
-  
+
   $('#master-book-list').hide();
   $('#to-read-list').hide();
 });
