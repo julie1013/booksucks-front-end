@@ -15,6 +15,7 @@ $(document).ready(function () {
   $('#review-form').hide();
   $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
   $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
+
   $('.master-list ol').on('click', 'li #write', function(event){
     event.preventDefault();
     let bookID = $(this).closest('li').attr('id');
@@ -22,6 +23,7 @@ $(document).ready(function () {
     $('#review-form').show();
     $('#review-button').on('submit', events.onSubmitReview);
   });
+  
   $('#master-book-list').hide();
   $('#to-read-list').hide();
 });
