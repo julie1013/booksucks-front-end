@@ -7,7 +7,8 @@
               defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8"
               defer></script>
-      <link href="https://fonts.googleapis.com/css?family=Bad+Script|Bangers|Dancing+Script"
+      <link href=
+    "https://fonts.googleapis.com/css?family=Bad+Script|Bangers|Dancing+Script"
             rel="stylesheet">
     </head>
     <body>
@@ -51,10 +52,11 @@
     </div>
     <div id="review-form" class="review-form-field signed-in">
       <form id="write-a-review" class="write-a-review-field">
-        <input name="Title" type="text" placeholder="title" class="review-title"
-        onfocus="this.placeholder =''" value="">
+        <input name="title" type="text" placeholder="title" class="review-title"
+        onfocus="this.placeholder =''">
         <input name="body" type="text"
-          value="" class="review-body">
+          placeholder="Write review here!" class="review-body"
+          onfocus="this.placeholder =''">
           <input type="Submit" value="Submit a review!" id="review-button">
       </form>
     </div>

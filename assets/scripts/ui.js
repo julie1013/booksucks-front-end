@@ -15,11 +15,10 @@ const onError = function (response) {
 };
 
 const onShowMyToReadListSuccess = function (data){
-  console.log(data);
+  $('#to-read-list').children(':not("h4")').remove();
   let bookID;
   for(let i = 0; i < data.books.length; i++){
     bookID = parseFloat(data.books[i].id);
-    console.log(bookID);
     $('#to-read-list').append('<li id=' + bookID + '>' +
     '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data.books[i].author + '</span>'+
@@ -30,6 +29,7 @@ const onShowMyToReadListSuccess = function (data){
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
+    $('#master-ordered-list').empty();
     masterList.onShowMasterList();
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
@@ -79,6 +79,10 @@ const onReadReviewSuccess = function(data){
 };
 
 const onSubmitReviewSuccess = function(data){
+  // console.log(data);
+};
+
+const onRemoveBookFromMyToReadListSuccess = function(data){
   console.log(data);
 };
 
@@ -93,6 +97,6 @@ module.exports = {
   onAddToMyToReadListSuccess,
   onReadReviewSuccess,
   onShowMyToReadListSuccess,
-  // onRemoveBookFromMyToReadListSuccess,
+  onRemoveBookFromMyToReadListSuccess,
   onSubmitReviewSuccess,
 };

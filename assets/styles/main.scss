@@ -118,13 +118,18 @@ li {
   @include box-sizing(content-box);
   border: 1px solid $black;
   float: left;
-  height: 450px;
+  height: 449px;
   margin-left: 20px;
   margin-top: 20px;
   width: 450px;
 }
 
-.text-field {
-  height: 424px;
+.review-title {
+  border: 1px solid $black;
+}
+
+.review-body {
+  border: 1px solid $black;
+  height: 400px;
   width: 450px;
 }

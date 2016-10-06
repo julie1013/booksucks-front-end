@@ -50,6 +50,8 @@ const addToMyToReadList = function(id){
     },
   });
 };
+//Grabs book from master list on server and transfers it to front-end
+//to-read-list
 
 const showMasterList = function(){
   return $.ajax({
@@ -97,11 +99,28 @@ const addBackendToReadList = function(data){
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: { qualified_books: {
+    data: { qualified_book: {
       user_id: app.user.id,
       book_id: data.book.id
       }
-    }
+    },
+    dataType: 'json'
+  });
+};
+
+const removeBookFromMyToReadList = function(data){
+  return  $.ajax({
+    url: app.host + '/qualified_books/',
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: { qualified_book: {
+      // user_id: app.user.id,
+      book_id: data.book.id
+      }
+    },
+    dataType: 'json'
   });
 };
 
@@ -120,4 +139,5 @@ module.exports = {
   showMyToReadList,
   submitReview,
   addBackendToReadList,
+  removeBookFromMyToReadList,
 };

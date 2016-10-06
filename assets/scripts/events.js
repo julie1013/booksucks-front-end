@@ -55,10 +55,10 @@ const onAddToMyToReadList = function (event) {
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
     $(this).parent().remove();
-    // ui.onRemoveBookFromMyToReadListSuccess();
-    // api.removeBookFromMyToReadList()
-    // .done(ui.removeBookFromMyToReadList)
-    // .fail(ui.onError);
+    ui.onRemoveBookFromMyToReadListSuccess();
+    api.removeBookFromMyToReadList()
+    .done(ui.removeBookFromMyToReadList)
+    .fail(ui.onError);
   };
 
   const onReadReviews = function (){
@@ -69,11 +69,9 @@ const onAddToMyToReadList = function (event) {
   };
 
   const onSubmitReview = function (event){
-    let bookID = $(this).parent().attr('id');
-    console.log("book ID is", bookID);
     event.preventDefault();
     let data = getFormFields(event.target);
-    api.submitReview(data, bookID)
+    api.submitReview(data)
       .done(ui.onSubmitReviewSuccess)
       .fail(ui.onError);
   };
