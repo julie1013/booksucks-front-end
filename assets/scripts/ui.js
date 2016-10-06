@@ -29,6 +29,7 @@ const onShowMyToReadListSuccess = function (data){
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
+    $('#master-ordered-list').empty();
     masterList.onShowMasterList();
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
@@ -81,6 +82,10 @@ const onSubmitReviewSuccess = function(data){
   console.log(data);
 };
 
+const onRemoveBookFromMyToReadListSuccess = function(data){
+  console.log(data);
+};
+
 
 
 module.exports = {
@@ -92,6 +97,6 @@ module.exports = {
   onAddToMyToReadListSuccess,
   onReadReviewSuccess,
   onShowMyToReadListSuccess,
-  // onRemoveBookFromMyToReadListSuccess,
+  onRemoveBookFromMyToReadListSuccess,
   onSubmitReviewSuccess,
 };

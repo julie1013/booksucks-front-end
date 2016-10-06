@@ -55,10 +55,10 @@ const onAddToMyToReadList = function (event) {
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
     $(this).parent().remove();
-    // ui.onRemoveBookFromMyToReadListSuccess();
-    // api.removeBookFromMyToReadList()
-    // .done(ui.removeBookFromMyToReadList)
-    // .fail(ui.onError);
+    ui.onRemoveBookFromMyToReadListSuccess();
+    api.removeBookFromMyToReadList()
+    .done(ui.removeBookFromMyToReadList)
+    .fail(ui.onError);
   };
 
   const onReadReviews = function (){
