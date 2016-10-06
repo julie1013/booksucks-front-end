@@ -15,7 +15,7 @@ const onError = function (response) {
 };
 
 const onShowMyToReadListSuccess = function (data){
-  console.log(data);
+  $('#to-read-list').children(':not("h4")').remove();
   let bookID;
   for(let i = 0; i < data.books.length; i++){
     bookID = parseFloat(data.books[i].id);
