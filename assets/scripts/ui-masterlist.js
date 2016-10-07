@@ -3,16 +3,16 @@
 const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.books.length; i++){
-    id = parseFloat(data.books[i].id);
-    $('.master-list ol').append('<li id=' + id + '>' +
+    id = data.books[i].id;
+    console.log(id);
+    $('.master-list ol').append('<li data-id=' + id + '>' +
     '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data.books[i].author + '</span>' +
     '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
-      '<input type=submit value="Add to your to-read list">' + '</form>' +
-      '<form id=read class=read-button>' +
-      '<input type=submit value="Read reviews!">' + '</form>' +
-      '<button id=write class=write-button>' + 'Write a scathing review!' +
-      '</button>' + '</li>');
+      '<input type=submit value="Add to your to-read list">' +
+      '<form id="notes" class="notes-field">' +
+      '<input name=notes placeholder="Notes"'+
+      'onfocus="this.placeholder="' + '' + "" + 'value=""' + '</li>');
   }
 };
 

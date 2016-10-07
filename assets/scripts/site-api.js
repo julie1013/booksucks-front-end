@@ -42,6 +42,7 @@ const changePassword = function(data){
 };
 
 const addToMyToReadList = function(id){
+  console.log(id);
   return $.ajax({
     url: app.host + '/books/' + id,
     method: 'GET',
@@ -90,19 +91,13 @@ const addBackendToReadList = function(data){
   });
 };
 
-const removeBookFromMyToReadList = function(data){
+const removeBookFromMyToReadList = function(){
   return  $.ajax({
     url: app.host + '/qualified_books/',
     method: "DELETE",
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: { qualified_book: {
-      // user_id: app.user.id,
-      book_id: data.book.id
-      }
-    },
-    dataType: 'json'
   });
 };
 

@@ -64,6 +64,7 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (data){
+  console.log("This is ", data);
   $('.to-read ol').append('<li>' + '<span class=title>' + data.book.title +
   '</span>' + ' , by ' + '<span class=author>' +  data.book.author + '</span>' +
   '<form>'+ '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +

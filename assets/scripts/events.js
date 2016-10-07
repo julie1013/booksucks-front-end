@@ -37,8 +37,9 @@ const onChangePassword = function (event) {
 
 const onAddToMyToReadList = function (event) {
   event.preventDefault();
-  // let data = getFormFields(event.target);
-  let id = $(this).parent().attr('id');
+  console.log($(this).parent().data);
+  let id = $(this).parent().data('id');
+  debugger;
   api.addToMyToReadList(id)
     .done(ui.onAddToMyToReadListSuccess)
     .fail(ui.onError);
@@ -55,6 +56,8 @@ const onAddToMyToReadList = function (event) {
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
     $(this).parent().remove();
+    let id = $(this).parent().attr('id');
+    console.log(id);
     ui.onRemoveBookFromMyToReadListSuccess();
     api.removeBookFromMyToReadList()
     .done(ui.removeBookFromMyToReadList)
