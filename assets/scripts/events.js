@@ -37,7 +37,6 @@ const onChangePassword = function (event) {
 
 const onAddToMyToReadList = function (event) {
   event.preventDefault();
-  console.log($(this));
   let id = $(this).parent().data('id');
   api.addToMyToReadList(id)
     .done(ui.onAddToMyToReadListSuccess)

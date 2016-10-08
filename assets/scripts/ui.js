@@ -2,7 +2,7 @@
 
 const app = require('./app');
 const masterList = require('./masterlist');
-const addBackend = require('./backendtoread');
+
 
 const onSignUpSuccess = function (data) {
   if (data) {
@@ -51,7 +51,9 @@ const onSignOutSuccess = function (){
   console.log("You are now signed out.");
   $('#sign-out').hide();
   $('#change-password').hide();
+  $('#to-read-list').children(':not("h4")').remove();
   $('#to-read-list').hide();
+  $('#show-my-to-read-list').hide();
   $('#master-book-list').hide();
   $('#review-form').hide();
   $('#review-prompt').hide();
@@ -65,12 +67,11 @@ const onChangePasswordSuccess = function (){
 };
 
 const onAddToMyToReadListSuccess = function (data){
-  let book = data.book
+  let book = data.book;
   $('.to-read ol').append('<li>' + '<span class=title>' +book.title +
   '</span>' + ' , by ' + '<span class=author>' +  book.author + '</span>' +
   '<form>'+ '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
    '</form>' + '</li>');
-   addBackend.onAddBackendToReadList(data);
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(data){
