@@ -41,10 +41,13 @@ const changePassword = function(data){
   });
 };
 
-const addToMyToReadList = function(id){
+const addToMyToReadList = function(book_id) {
   return $.ajax({
-    url: app.host + '/books/' + id,
-    method: 'GET',
+    url: app.host + '/qualified_books',
+    method: 'POST',
+    data: {
+      qualified_book : { book_id: book_id }
+    },
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
@@ -64,9 +67,8 @@ const showMasterList = function(){
 };
 
 const showMyToReadList = function(){
-  let id = app.qualified_book.id;
   return $.ajax({
-    url: app.host + '/qualified_books/' + id,
+    url: app.host + '/books/user_books',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
