@@ -42,7 +42,6 @@ const changePassword = function(data){
 };
 
 const addToMyToReadList = function(id){
-  console.log(id);
   return $.ajax({
     url: app.host + '/books/' + id,
     method: 'GET',
@@ -65,8 +64,9 @@ const showMasterList = function(){
 };
 
 const showMyToReadList = function(){
+  let id = app.qualified_book.id;
   return $.ajax({
-    url: app.host + '/my_books',
+    url: app.host + '/qualified_books/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,

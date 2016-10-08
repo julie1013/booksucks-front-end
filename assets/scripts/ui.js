@@ -15,13 +15,14 @@ const onError = function (response) {
 };
 
 const onShowMyToReadListSuccess = function (data){
+  console.log(data);
   $('#to-read-list').children(':not("h4")').remove();
   let bookID;
-  for(let i = 0; i < data.books.length; i++){
-    bookID = parseFloat(data.books[i].id);
+  for(let i = 0; i < data.qualified_books.length; i++){
+    bookID = data.qualified_books[i].book_id;
     $('#to-read-list').append('<li id=' + bookID + '>' +
-    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data.books[i].author + '</span>'+
+    '<span class=title>' + data.qualified_books[i].title +'</span>' + ' , by ' +
+    '<span class=author>' +  data.qualified_books[i].author + '</span>'+
     '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '</form>' + ' </li>');
   }
