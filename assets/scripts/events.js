@@ -45,9 +45,10 @@ const onAddToMyToReadList = function (event) {
 
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
+    let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
     $(this).parent().remove();
     ui.onRemoveBookFromMyToReadListSuccess();
-    api.removeBookFromMyToReadList()
+    api.removeBookFromMyToReadList(qualifiedBookID)
     .done(ui.removeBookFromMyToReadList)
     .fail(ui.onError);
   };

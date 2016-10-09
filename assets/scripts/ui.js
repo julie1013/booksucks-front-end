@@ -25,8 +25,8 @@ const onAddToMyToReadListSuccess = function (data){
    '</form>' + '</li>');
 };
 
-const onRemoveBookFromMyToReadListSuccess = function(data){
-  console.log(data);
+const onRemoveBookFromMyToReadListSuccess = function(){
+
 };
 
 const onSignInSuccess = function (data) {

@@ -64,9 +64,9 @@ const showMyToReadList = function(){
     });
 };
 
-const removeBookFromMyToReadList = function(){
+const removeBookFromMyToReadList = function(qualifiedBookID){
   return  $.ajax({
-    url: app.host + '/qualified_books/',
+    url: app.host + '/qualified_books/' + qualifiedBookID,
     method: "DELETE",
     headers: {
       Authorization: 'Token token=' + app.user.token,
