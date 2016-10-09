@@ -4,7 +4,6 @@ const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.books.length; i++){
     id = data.books[i].id;
-    console.log(data.books[i]);
     $('.master-list ol').append('<li data-id=' + id + '>' +
     '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data.books[i].author + '</span>' +

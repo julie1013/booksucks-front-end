@@ -10,19 +10,30 @@ const onSignUpSuccess = function (data) {
   }
 };
 
-const onError = function (response) {
-  $('.display-stats').html(response);
+const onError = function () {
+  console.log("Error");
+};
+
+const onAddToMyToReadListSuccess = function (data){
+  console.log("This data is ", data);
+  let book = data.book;
+  let id = data.id;
+  $('.to-read ol').append('<li>' + '<span class=title>' + book.title +
+  '</span>' + ' , by ' + '<span class=author>' +  book.author + '</span>' +
+  '<form>'+ '<input type=submit value="Remove from your list" data-id=' + id + ' class=remove-from-my-to-read-list-button>' +
+   '</form>' + '</li>');
 };
 
 const onShowMyToReadListSuccess = function (data){
-  console.log(data);
   $('#to-read-list').children(':not("h4")').remove();
   let bookID;
-  for(let i = 0; i < data.books.length; i++){
-    bookID = data.books[i].book_id;
-    $('#to-read-list').append('<li id=' + bookID + '>' +
-    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data.books[i].author + '</span>'+
+  let qualifiedBookID;
+  console.log(data);
+  for(let i = 0; i < data.length; i++){
+    qualifiedBookID = data[i].id;
+    $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
+    '<span class=title>' + data[i].book.title +'</span>' + ' , by ' +
+    '<span class=author>' +  data[i].book.author + '</span>'+
     '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '</form>' + ' </li>');
   }
@@ -39,6 +50,7 @@ const onSignInSuccess = function (data) {
     $('#change-password').show();
     $('#to-read-list').show();
     $('#to-read-list h4').show();
+    $('#to-read-list').children().show();
     $('#master-book-list').show();
     $('#show-my-to-read-list').show();
     $('#review-prompt').show();
@@ -64,14 +76,6 @@ const onSignOutSuccess = function (){
 
 const onChangePasswordSuccess = function (){
   console.log("Password successfully changed.");
-};
-
-const onAddToMyToReadListSuccess = function (data){
-  let book = data.book;
-  $('.to-read ol').append('<li>' + '<span class=title>' +book.title +
-  '</span>' + ' , by ' + '<span class=author>' +  book.author + '</span>' +
-  '<form>'+ '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
-   '</form>' + '</li>');
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(data){

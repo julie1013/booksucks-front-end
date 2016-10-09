@@ -41,20 +41,29 @@ const changePassword = function(data){
   });
 };
 
-const addToMyToReadList = function(book_id) {
+const addToMyToReadList = function(bookID) {
   return $.ajax({
     url: app.host + '/qualified_books',
     method: 'POST',
     data: {
-      qualified_book : { book_id: book_id }
+      qualified_book : { book_id: bookID }
     },
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
   });
 };
-//Grabs book from master list on server and transfers it to front-end
-//to-read-list
+
+const showMyToReadList = function(){
+    return $.ajax({
+        url: app.host + '/qualified_books',
+        method: 'GET',
+        headers: {
+            Authorization: 'Token token=' + app.user.token,
+        },
+    });
+};
+
 
 const showMasterList = function(){
   return $.ajax({
@@ -66,32 +75,6 @@ const showMasterList = function(){
   });
 };
 
-const showMyToReadList = function(){
-  return $.ajax({
-    url: app.host + '/books/user_books',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
-
-
-const addBackendToReadList = function(data){
-  return $.ajax({
-    url: app.host + '/qualified_books/',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: { qualified_book: {
-      user_id: app.user.id,
-      book_id: data.book.id
-      }
-    },
-    dataType: 'json'
-  });
-};
 
 const removeBookFromMyToReadList = function(){
   return  $.ajax({
@@ -134,7 +117,6 @@ module.exports = {
   addToMyToReadList,
   showMasterList,
   showMyToReadList,
-  addBackendToReadList,
   removeBookFromMyToReadList,
   // readReviews,
   // submitReview,
