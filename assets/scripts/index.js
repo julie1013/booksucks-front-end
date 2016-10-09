@@ -8,8 +8,6 @@ $(document).ready(function () {
   $('#sign-out').on('submit', events.onSignOut);
   $('#change-password').on('submit', events.onChangePassword);
   $('body').on('click', '#remove-from-my-to-read-list', events.onRemoveBookFromMyToReadList);
-  $('#show-my-to-read-list').on('submit', events.onShowMyToReadList);
-  $('#show-my-to-read-list').hide();
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#review-form').hide();

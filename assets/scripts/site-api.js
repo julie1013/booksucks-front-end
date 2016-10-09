@@ -64,6 +64,17 @@ const showMyToReadList = function(){
     });
 };
 
+const removeBookFromMyToReadList = function(){
+  return  $.ajax({
+    url: app.host + '/qualified_books/',
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+
 
 const showMasterList = function(){
   return $.ajax({
@@ -71,17 +82,6 @@ const showMasterList = function(){
   method: 'GET',
   headers: {
     Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
-
-
-const removeBookFromMyToReadList = function(){
-  return  $.ajax({
-    url: app.host + '/qualified_books/',
-    method: "DELETE",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
     },
   });
 };

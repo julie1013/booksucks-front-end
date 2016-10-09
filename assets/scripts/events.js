@@ -43,20 +43,9 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
-  const onShowMyToReadList = function (event){
-    event.preventDefault();
-    api.showMyToReadList()
-    .done(ui.onShowMyToReadListSuccess)
-    .fail(ui.onError);
-  };
-
-
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
-    let id = $(this).parent().data('id');
-    console.log($(this));
     $(this).parent().remove();
-    console.log(id);
     ui.onRemoveBookFromMyToReadListSuccess();
     api.removeBookFromMyToReadList()
     .done(ui.removeBookFromMyToReadList)
@@ -92,7 +81,6 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
-  onShowMyToReadList,
   // onReadReviews,
   // onSubmitReview,
 };
