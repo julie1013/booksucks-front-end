@@ -9,7 +9,7 @@ const onShowMyToReadListSuccess = function (data){
     $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
     '<span class=title>' + data[i].book.title +'</span>' + ' , by ' +
     '<span class=author>' +  data[i].book.author + '</span>'+
-    '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
+    '<input type=submit value="Remove" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '</form>' + ' </li>');
   }
 };
