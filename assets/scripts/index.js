@@ -13,7 +13,7 @@ $(document).ready(function () {
   $('#review-form').hide();
   $('#master-book-list').hide();
   $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
-  $('#to-read-list').hide();
+  $('#to-read-list-div').hide();
   // $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
   // $('.master-list ol').on('click', 'li #write', function(event){
   //   event.preventDefault();

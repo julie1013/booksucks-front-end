@@ -15,14 +15,8 @@ const onError = function () {
   console.log("Error");
 };
 
-const onAddToMyToReadListSuccess = function (data){
-  console.log("This data is ", data);
-  let book = data.book;
-  let id = data.id;
-  $('.to-read ol').append('<li>' + '<span class=title>' + book.title +
-  '</span>' + ' , by ' + '<span class=author>' +  book.author + '</span>' +
-  '<form>'+ '<input type=submit value="Remove from your list" data-id=' + id + ' class=remove-from-my-to-read-list-button>' +
-   '</form>' + '</li>');
+const onAddToMyToReadListSuccess = function (){
+  showToReadList.onShowMyToReadList();
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(){
@@ -39,9 +33,8 @@ const onSignInSuccess = function (data) {
     $('#sign-out').show();
     $('#change-password').show();
     showToReadList.onShowMyToReadList();
-    $('#to-read-list').show();
-    $('#to-read-list h4').show();
-    $('#to-read-list').children().show();
+    $('#to-read-list-div').show();
+    $('#to-read-list-div').children().show();
     $('#master-book-list').show();
     $('#show-my-to-read-list').show();
     $('#review-prompt').show();
@@ -55,7 +48,7 @@ const onSignOutSuccess = function (){
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#to-read-list').children(':not("h4")').remove();
-  $('#to-read-list').hide();
+  $('#to-read-list-div').hide();
   $('#show-my-to-read-list').hide();
   $('#master-book-list').hide();
   $('#review-form').hide();

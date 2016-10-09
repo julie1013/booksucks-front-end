@@ -88,7 +88,7 @@ li {
   float: right;
   margin: 0 auto;
   margin-right: 50px;
-  margin-top: -608px;
+  margin-top: -500px;
   width: 30%;
 }
 
@@ -98,8 +98,10 @@ li {
 
 .master-list {
   border: 1px solid $black;
+  height: 500px;
   margin: 0 auto;
   margin-top: -100px;
+  overflow: scroll;
   text-align: left;
   width: 30%;
 }
