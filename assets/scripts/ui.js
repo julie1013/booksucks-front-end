@@ -4,7 +4,6 @@ const app = require('./app');
 const masterList = require('./masterlist');
 const showToReadList = require('./showToReadList.js');
 
-
 const onSignUpSuccess = function (data) {
   if (data) {
     console.log(data);
@@ -24,7 +23,7 @@ const onRemoveBookFromMyToReadListSuccess = function(){
 };
 
 const onAddNoteSuccess = function(data){
-  console.log(data);
+    $('#noteSpace').remove();
     $('#to-read-list [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
 };
 

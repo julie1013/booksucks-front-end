@@ -1,13 +1,18 @@
 'use strict';
 
+
+
 const onShowMyToReadListSuccess = function (data){
   $('#to-read-list').children(':not("h4")').remove();
   let qualifiedBookID;
   for(let i = 0; i < data.length; i++){
+    if (data[i].notes === null){
+      data[i].notes = "Write something!";
+    }
     qualifiedBookID = data[i].id;
     $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
     '<span class=title>' + data[i].book.title +'</span>' + ' , by ' +
-    '<span class=author>' +  data[i].book.author + '</span>'+ '<p>Notes:</p>' +
+    '<span class=author>' +  data[i].book.author + '</span>'+ '<p id="noteSpace">Notes:</p>' +
     data[i].notes +
     '<form id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '<input type=submit value="Remove" >' + '</form>' +
