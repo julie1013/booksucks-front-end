@@ -74,6 +74,18 @@ const removeBookFromMyToReadList = function(qualifiedBookID){
   });
 };
 
+const addNote = function(params, qualifiedBookID){
+  return $.ajax({
+    url: app.host + '/qualified_books/' + qualifiedBookID,
+    method: 'PATCH',
+    data: {
+      qualified_book : params
+    },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
 
 
 const showMasterList = function(){
@@ -118,6 +130,7 @@ module.exports = {
   showMasterList,
   showMyToReadList,
   removeBookFromMyToReadList,
+  addNote,
   // readReviews,
   // submitReview,
 };

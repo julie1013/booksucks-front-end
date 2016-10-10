@@ -20,7 +20,12 @@ const onAddToMyToReadListSuccess = function (){
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(){
+  console.log("Book removed!");
+};
 
+const onAddNoteSuccess = function(data){
+  console.log(data);
+    $('#to-read-list [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
 };
 
 const onSignInSuccess = function (data) {
@@ -36,15 +41,15 @@ const onSignInSuccess = function (data) {
     $('#to-read-list-div').show();
     $('#to-read-list-div').children().show();
     $('#master-book-list').show();
+    $('h3').show();
     $('#show-my-to-read-list').show();
     $('#review-prompt').show();
+    $('#addNote').show();
 };
 
 const onSignOutSuccess = function (){
   $('#sign-out').hide();
   $('#change-password').hide();
-  app.user = null;
-  console.log("You are now signed out.");
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#to-read-list').children(':not("h4")').remove();
@@ -85,6 +90,7 @@ module.exports = {
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
+  onAddNoteSuccess,
   // onReadReviewSuccess,
   // onSubmitReviewSuccess,
 };

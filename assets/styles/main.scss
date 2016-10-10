@@ -89,10 +89,13 @@ li {
   margin: 0 auto;
   margin-right: 50px;
   margin-top: -500px;
+  max-height: 500px;
+  overflow: scroll;
   width: 30%;
 }
 
 .add-button {
+  margin-bottom: 15px;
   margin-left: 20px;
 }
 
@@ -121,6 +124,7 @@ li {
   margin-right: 10px;
   margin-top: 5px;
 };
+
 
 // .review-form-field {
 //   @include box-sizing(content-box);

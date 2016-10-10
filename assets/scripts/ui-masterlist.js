@@ -8,14 +8,13 @@ const onShowMasterListSuccess = function (data){
     '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
     '<span class=author>' +  data.books[i].author + '</span>' +
     '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
-      '<input type=submit value="Add to your to-read list">' +
-      '<form id="notes" class="notes-field">' + "Add a note:" +
-      '<input name=notes' + 'value=""' + '</li>');
+    '<input type=submit value="Add to your to-read list">' + '</form>' +
+    '</li>');
   }
 };
 
-const onError = function (response) {
-  $('.display-stats').html(response);
+const onError = function () {
+  console.log("Error");
 };
 
 module.exports = {

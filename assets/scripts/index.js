@@ -14,6 +14,9 @@ $(document).ready(function () {
   $('#master-book-list').hide();
   $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
   $('#to-read-list-div').hide();
+  $('h3').hide();
+  $('#addNote').hide();
+  $('#to-read-list-div').on('submit', 'li #addNote', events.onAddNote);
   // $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
   // $('.master-list ol').on('click', 'li #write', function(event){
   //   event.preventDefault();

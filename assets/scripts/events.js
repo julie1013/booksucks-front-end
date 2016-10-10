@@ -53,6 +53,15 @@ const onAddToMyToReadList = function (event) {
     .fail(ui.onError);
   };
 
+  const onAddNote = function(event){
+    event.preventDefault();
+    let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
+    let params = getFormFields(event.target);
+    api.addNote(params, qualifiedBookID)
+      .done(ui.onAddNoteSuccess)
+      .fail(ui.onError);
+  };
+
   // const onReadReviews = function (){
   //   let id = $(this).parent().attr('id');
   //   api.readReviews(id)
@@ -82,6 +91,7 @@ module.exports = {
   onChangePassword,
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
+  onAddNote,
   // onReadReviews,
   // onSubmitReview,
 };
