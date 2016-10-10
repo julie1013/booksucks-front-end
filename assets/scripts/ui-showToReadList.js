@@ -16,7 +16,7 @@ const onShowMyToReadListSuccess = function (data){
     data[i].notes +
     '<form id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '<input type=submit value="Remove" >' + '</form>' +
-    '<form id="addNote" class="notes-field">' + '<input type=submit value="Add a note?">' +
+    '<form id="addNote" class="notes-field">' + '<input type=submit value="Write a note?">' +
     '<input name="notes"' + 'input type="text"'+ 'value="">' + '</form>' +
     ' </li>');
   }
