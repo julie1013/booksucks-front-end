@@ -6,12 +6,12 @@ const showToReadList = require('./showToReadList.js');
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log(data);
+    $('#signUpInOut').html("You are signed up! Now sign in!");
   }
 };
 
 const onError = function () {
-  console.log("Error");
+  $('signupInOut').html("Sorry, there was an error");
 };
 
 const onAddToMyToReadListSuccess = function (){
@@ -33,6 +33,7 @@ const onAddNoteSuccess = function(data){
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
+    $('#signUpInOut').html("You are now signed in!")
     $('#master-ordered-list').empty();
     masterList.onShowMasterList();
     $('#book-burn-pic').hide();
@@ -51,6 +52,7 @@ const onSignInSuccess = function (data) {
 };
 
 const onSignOutSuccess = function (){
+  $('#signUpInOut').html("Bye!");
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#sign-out').hide();
@@ -67,7 +69,7 @@ const onSignOutSuccess = function (){
 };
 
 const onChangePasswordSuccess = function (){
-  console.log("Password successfully changed.");
+  $('#signUpInOut').html("Password successfully changed!");
 };
 
 // const onReadReviewSuccess = function(data){

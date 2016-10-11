@@ -14,7 +14,6 @@ body {
   }
 
 h1 {
-  font-size: 50px;
   width: 320px;
   }
 
@@ -30,7 +29,8 @@ li {
 h1,
 h3,
 .sucks,
-.author {
+.author,
+.sign-up-in-out-space {
   font-family: 'Bangers', cursive;
 }
 
@@ -39,23 +39,33 @@ h1,
   margin-left: 20px;
 }
 
-h3,
-.book-burn {
-  text-align: center;
+h1,
+.book-burn .sucks {
+  font-size: 50px;
 }
 
+h3,
 .book-burn,
-.to-read,
-.note-space-here {
-  border: 1px solid $black;
+.sign-up-in-out-space {
+  text-align: center;
 }
 
 .sign-up-form,
 .sign-in-form,
-.change-password-form {
+.change-password-form,
+.sign-up-in-out-space {
   margin-left: 35px;
   width: 154px;
 }
+
+.master-list,
+.book-burn,
+.to-read,
+.note-space-here,
+.sign-up-in-out-space {
+  border: 1px solid $black;
+}
+
 
 .book-burn,
 .to-read,
@@ -63,19 +73,40 @@ h3,
   margin: 0 auto;
 }
 
+.to-read,
+.author,
+.remove-from-my-to-read-list-button {
+  float: right;
+}
+
+.sign-up-form,
+.sign-in-form,
+.change-password-form {
+  margin-bottom: 10px;
+}
+
 .title,
-.author {
+.author,
+.sign-up-in-out-space {
   font-size: 20px;
+}
+
+.book-burn,
+.sign-up-in-out-space {
+  border-radius: 10px;
 }
 
 .to-read li {
   padding: 15px 0 10px;
 }
 
+.master-list li {
+  padding-top: 5px;
+}
+
 .to-read {
   clear: both;
-  float: right;
-  margin: -500px 50px 0;
+  margin: -500px 75px 0;
   max-height: 500px;
   overflow: scroll;
   width: 30%;
@@ -83,22 +114,17 @@ h3,
 
 .book-burn {
   @include box-sizing(content-box);
-  border-radius: 10px;
-  margin-top: -170px;
+  margin-top: -320px;
   width: 494px;
 };
 
-.quote {
+.intro {
   font-family: 'Dancing Script', cursive;
   font-size: 25px;
 }
 
 .sign-out-button {
   margin-left: 35px;
-}
-
-.sign-up-form {
-  margin-bottom: 10px;
 }
 
 .change-password-form {
@@ -109,13 +135,14 @@ h3,
   font-size: 30px;
 }
 
-.add-button {
+.add-to-my-to-read-list-button {
   margin-bottom: 15px;
 }
 
 .master-list {
   height: 500px;
-  margin-top: -100px;
+  margin-right: 525px;
+  margin-top: -225px;
   overflow: scroll;
   text-align: left;
   width: 30%;
@@ -126,18 +153,24 @@ h3,
 }
 
 .author {
-  float: right;
   margin-right: 20px;
 }
 
 .remove-from-my-to-read-list-button {
-  float: right;
   margin-right: 10px;
 };
 
 .note-space-here {
   margin-top: 5px;
 }
+
+.sign-up-in-out-space {
+  height: 100px;
+  padding-top: 20px;
+  width: 200px;
+}
+
+
 
 // .review-form-field {
 //   @include box-sizing(content-box);
@@ -157,9 +190,4 @@ h3,
 //   border: 1px solid $black;
 //   height: 400px;
 //   width: 450px;
-// }
-
-// .reviewer {
-//   font-family: 'Bad Script', cursive;
-//   font-size: 20px;
 // }

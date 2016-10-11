@@ -12,7 +12,7 @@ $(document).ready(function () {
   $('#change-password').hide();
   $('#review-form').hide();
   $('#master-book-list').hide();
-  $('.master-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
+  $('#master-book-list ol').on('submit', 'li #add-to-my-to-read-list', events.onAddToMyToReadList);
   $('#to-read-list-div').hide();
   $('h3').hide();
   $('#addNote').hide();
