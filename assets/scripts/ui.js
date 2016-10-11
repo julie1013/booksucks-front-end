@@ -27,6 +27,10 @@ const onAddNoteSuccess = function(data){
     $('#to-read-list [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
 };
 
+// const onRemoveNoteSuccess = function(){
+//   console.log("Hi");
+// };
+
 const onSignInSuccess = function (data) {
     app.user = data.user;
     $('#master-ordered-list').empty();
@@ -90,6 +94,7 @@ module.exports = {
   onAddToMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
   onAddNoteSuccess,
+  // onRemoveNoteSuccess,
   // onReadReviewSuccess,
   // onSubmitReviewSuccess,
 };

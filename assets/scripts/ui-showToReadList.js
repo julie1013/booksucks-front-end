@@ -7,7 +7,7 @@ const onShowMyToReadListSuccess = function (data){
   let qualifiedBookID;
   for(let i = 0; i < data.length; i++){
     if (data[i].notes === null){
-      data[i].notes = "Write something!";
+      data[i].notes = "Your note here!";
     }
     qualifiedBookID = data[i].id;
     $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
@@ -18,7 +18,15 @@ const onShowMyToReadListSuccess = function (data){
     '<input type=submit value="Remove" >' + '</form>' +
     '<form id="addNote" class="notes-field">' + '<input type=submit value="Write a note?">' +
     '<input name="notes"' + 'input type="text"'+ 'value="">' + '</form>' +
-    ' </li>');
+    '<form id="removeNote" class="notes-field">' + '<input type=submit value="Remove Note">' +
+    '</form>' + '</li>');
+    if (data[i].notes === "Your note here!"){
+      $('#removeNote').hide();
+      $('#addNote').show();
+    } else {
+      $('#removeNote').show();
+      $('#addNote').hide();
+    }
   }
 };
 

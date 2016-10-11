@@ -62,6 +62,15 @@ const onAddToMyToReadList = function (event) {
       .fail(ui.onError);
   };
 
+    // const onRemoveNote = function(event){
+    //   event.preventDefault();
+    //   let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
+    //   let params = getFormFields(event.target);
+    //   api.removeNote(qualifiedBookID, params)
+    //   .done(ui.onRemoveNoteSuccess)
+    //   .fail(ui.onError)
+    // };
+
   // const onReadReviews = function (){
   //   let id = $(this).parent().attr('id');
   //   api.readReviews(id)
@@ -92,6 +101,7 @@ module.exports = {
   onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
   onAddNote,
+  // onRemoveNote,
   // onReadReviews,
   // onSubmitReview,
 };

@@ -16,6 +16,7 @@ $(document).ready(function () {
   $('#to-read-list-div').hide();
   $('h3').hide();
   $('#addNote').hide();
+  $('#to-read-list-div ol li').on('submit', '#removeNote', events.onRemoveNote);
   $('#to-read-list-div').on('submit', 'li #addNote', events.onAddNote);
   // $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
   // $('.master-list ol').on('click', 'li #write', function(event){
