@@ -29,7 +29,7 @@ const onRemoveBookFromMyToReadListSuccess = function(){
 
 const onAddNoteSuccess = function(data){
     $('#noteSpace').remove();
-    $('#to-read-list [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
+    $('#toReadList [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
 };
 
 // const onRemoveNoteSuccess = function(){
@@ -47,8 +47,8 @@ const onSignInSuccess = function (data) {
     $('#sign-up').hide();
     $('#sign-out').show();
     $('#change-password').show();
-    $('#to-read-list-div').show();
-    $('#to-read-list-div').children().show();
+    $('#toReadListDiv').show();
+    $('#toReadListDiv').children().show();
     $('#master-book-list').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
@@ -63,7 +63,7 @@ const onSignOutSuccess = function (){
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#to-read-list').children(':not("h4")').remove();
-  $('#to-read-list-div').hide();
+  $('#toReadListDiv').hide();
   $('#show-my-to-read-list').hide();
   $('#master-book-list').hide();
   $('#review-form').hide();

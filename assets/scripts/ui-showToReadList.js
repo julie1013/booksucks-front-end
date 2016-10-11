@@ -3,7 +3,7 @@
 
 
 const onShowMyToReadListSuccess = function (data){
-  $('#to-read-list').children(':not("h3")').remove();
+  $('#toReadList').children(':not("h3")').remove();
   //Empty previous to-read list so it's not duplicated
   let qualifiedBookID;
   //initialize variable for qualifiedBookId
@@ -14,14 +14,14 @@ const onShowMyToReadListSuccess = function (data){
     }
     qualifiedBookID = data[i].id;
     //qualifiedBookId is assigned the id of a qualified_books entry
-    $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
+    $('#toReadList').append('<li data-id=' + qualifiedBookID + '>' +
     //append list items to to-read list
     '<span class=title>' + data[i].book.title +'</span>' +
     //each list item has a title...
     '<span class=author>' +  data[i].book.author + '</span>'+ '<p id="noteSpace" class="note-space-here">Notes:</p>' +
     //...and an author... and a space where you can see a note...
     data[i].notes +
-    '<form id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
+    '<form id=removeFromMyToReadList class=remove-from-my-to-read-list>' +
     //...and each note is given a form button to enable removal
     '<input type=submit value="Remove Book">' + '</form>' +
     //...and each book on the list has a removal option...
@@ -29,7 +29,7 @@ const onShowMyToReadListSuccess = function (data){
     //...and this is the field in which you can type your note; field button included
     '<input name="notes"' + 'input type="text"'+ 'value="">' + '</form>' +
     //...the rest of the notes form
-    '<form id="removeNote" class="notes-field">' + '<input type=submit value="Remove Note">' +
+    '<form id="removeNote" class="remove-notes">' + '<input type=submit value="Remove Note">' +
     //...option to remove note
     '</form>' + '</li>');
     //...list item closed
