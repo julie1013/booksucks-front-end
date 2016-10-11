@@ -11,15 +11,20 @@ const onSignUpSuccess = function (data) {
 };
 
 const onError = function () {
-  $('signupInOut').html("Sorry, there was an error");
+  $('#signUpInOut').html("Sorry, there was an error");
+};
+
+const onErrorBook = function () {
+  $('#signUpInOut').html("You've already added that book!");
 };
 
 const onAddToMyToReadListSuccess = function (){
   showToReadList.onShowMyToReadList();
+  $('#signUpInOut').html("You really want to read that?? OK...");
 };
 
 const onRemoveBookFromMyToReadListSuccess = function(){
-  console.log("Book removed!");
+  $('#signUpInOut').html("Yeah, that book sucks too much!");
 };
 
 const onAddNoteSuccess = function(data){
@@ -33,22 +38,22 @@ const onAddNoteSuccess = function(data){
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
-    $('#signUpInOut').html("You are now signed in!")
+    $('#signUpInOut').html("You are now signed in!");
     $('#master-ordered-list').empty();
     masterList.onShowMasterList();
+    showToReadList.onShowMyToReadList();
     $('#book-burn-pic').hide();
     $('#sign-in').hide();
     $('#sign-up').hide();
     $('#sign-out').show();
     $('#change-password').show();
-    showToReadList.onShowMyToReadList();
     $('#to-read-list-div').show();
     $('#to-read-list-div').children().show();
     $('#master-book-list').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
-    $('#review-prompt').show();
     $('#addNote').show();
+    // $('#review-prompt').show();
 };
 
 const onSignOutSuccess = function (){
@@ -88,13 +93,14 @@ const onChangePasswordSuccess = function (){
 
 module.exports = {
   onSignUpSuccess,
-  onError,
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
   onAddToMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
   onAddNoteSuccess,
+  onError,
+  onErrorBook,
   // onRemoveNoteSuccess,
   // onReadReviewSuccess,
   // onSubmitReviewSuccess,

@@ -14,7 +14,7 @@ const onShowMasterListSuccess = function (data){
 };
 
 const onError = function () {
-  console.log("Error");
+  $('#signUpInOut').html("Sorry, there was an error");
 };
 
 module.exports = {

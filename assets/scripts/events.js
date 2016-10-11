@@ -40,7 +40,7 @@ const onAddToMyToReadList = function (event) {
   let bookID = $(this).parent().data('id');
   api.addToMyToReadList(bookID)
     .done(ui.onAddToMyToReadListSuccess)
-    .fail(ui.onError);
+    .fail(ui.onErrorBook);
   };
 
   const onRemoveBookFromMyToReadList = function(event) {
