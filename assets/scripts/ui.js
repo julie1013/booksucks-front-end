@@ -28,7 +28,7 @@ const onRemoveBookFromMyToReadListSuccess = function(){
 };
 
 const onAddNoteSuccess = function(data){
-    $('#noteSpace').remove();
+    $('.note-space').remove();
     $('#toReadList [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
 };
 
@@ -52,7 +52,7 @@ const onSignInSuccess = function (data) {
     $('#masterBookList').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
-    $('#addNote').show();
+    $('.add-note').show();
     // $('#review-prompt').show();
 };
 

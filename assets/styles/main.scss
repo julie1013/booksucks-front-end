@@ -22,7 +22,7 @@ img {
   width: 494px;
 }
 
-li {
+li, .note-space-here {
   border-bottom: 2px solid $black;
 }
 
@@ -61,7 +61,6 @@ h3,
 .master-list,
 .book-burn,
 .to-read,
-.note-space-here,
 .sign-up-in-out-space {
   border: 1px solid $black;
 }

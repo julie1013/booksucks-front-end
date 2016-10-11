@@ -7,17 +7,17 @@ $(document).ready(function () {
   $('#signIn').on('submit', events.onSignIn);
   $('#signOut').on('submit', events.onSignOut);
   $('#changePassword').on('submit', events.onChangePassword);
-  $('body').on('click', '#removeFromMyToReadList', events.onRemoveBookFromMyToReadList);
+  $('body').on('click', '.remove-from-my-to-read-list', events.onRemoveBookFromMyToReadList);
   $('#signOut').hide();
   $('#changePassword').hide();
   $('#reviewForm').hide();
   $('#masterBookList').hide();
-  $('#masterBookList ol').on('submit', 'li #addToMyToReadList', events.onAddToMyToReadList);
+  $('#masterBookList ol').on('submit', 'li .add-to-my-to-read-list', events.onAddToMyToReadList);
   $('#toReadListDiv ol li').on('submit', '#removeNote', events.onRemoveNote);
-  $('#toReadListDiv').on('submit', 'li #addNote', events.onAddNote);
+  $('#toReadListDiv').on('submit', 'li .add-note', events.onAddNote);
   $('#toReadListDiv').hide();
   $('h3').hide();
-  $('#addNote').hide();
+  $('.add-note').hide();
 
   // $('.master-list ol').on('submit', 'li #read', events.onReadReviews);
   // $('.master-list ol').on('click', 'li #write', function(event){
