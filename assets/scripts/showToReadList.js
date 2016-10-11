@@ -11,7 +11,7 @@ const onShowMyToReadList = function (){
 };
 
 const onError = function () {
-  console.log("Error");
+  $('#signUpInOut').html("Sorry, something went wrong!");
 };
 
 
