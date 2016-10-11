@@ -14,15 +14,6 @@ const onError = function () {
   $('#signUpInOut').html("Sorry, there was an error");
 };
 
-const onErrorBook = function () {
-  $('#signUpInOut').html("You've already added that book!");
-};
-
-const onAddToMyToReadListSuccess = function (){
-  showToReadList.onShowMyToReadList();
-  $('#signUpInOut').html("You really want to read that?? OK...");
-};
-
 const onRemoveBookFromMyToReadListSuccess = function(){
   $('#signUpInOut').html("Yeah, that book sucks too much!");
 };
@@ -96,11 +87,9 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
-  onAddToMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
   onAddNoteSuccess,
   onError,
-  onErrorBook,
   // onRemoveNoteSuccess,
   // onReadReviewSuccess,
   // onSubmitReviewSuccess,

@@ -12,9 +12,6 @@ $(document).ready(function () {
   $('#changePassword').hide();
   $('#reviewForm').hide();
   $('#masterBookList').hide();
-  $('#masterBookList ol').on('submit', 'li .add-to-my-to-read-list', events.onAddToMyToReadList);
-  $('#toReadListDiv ol li').on('submit', '#removeNote', events.onRemoveNote);
-  $('#toReadListDiv').on('submit', 'li .add-note', events.onAddNote);
   $('#toReadListDiv').hide();
   $('h3').hide();
   $('.add-note').hide();
