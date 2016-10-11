@@ -39,17 +39,17 @@ const onAddNoteSuccess = function(data){
 const onSignInSuccess = function (data) {
     app.user = data.user;
     $('#signUpInOut').html("You are now signed in!");
-    $('#master-ordered-list').empty();
+    $('#masterOrderedList').empty();
     masterList.onShowMasterList();
     showToReadList.onShowMyToReadList();
     $('#book-burn-pic').hide();
-    $('#sign-in').hide();
-    $('#sign-up').hide();
-    $('#sign-out').show();
-    $('#change-password').show();
+    $('#signIn').hide();
+    $('#signUp').hide();
+    $('#signOut').show();
+    $('#changePassword').show();
     $('#toReadListDiv').show();
     $('#toReadListDiv').children().show();
-    $('#master-book-list').show();
+    $('#masterBookList').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
     $('#addNote').show();
@@ -58,18 +58,18 @@ const onSignInSuccess = function (data) {
 
 const onSignOutSuccess = function (){
   $('#signUpInOut').html("Bye!");
-  $('#sign-out').hide();
-  $('#change-password').hide();
-  $('#sign-out').hide();
-  $('#change-password').hide();
+  $('#signOut').hide();
+  $('#changePassword').hide();
+  $('#signOut').hide();
+  $('#changePassword').hide();
   $('#to-read-list').children(':not("h4")').remove();
   $('#toReadListDiv').hide();
   $('#show-my-to-read-list').hide();
-  $('#master-book-list').hide();
-  $('#review-form').hide();
+  $('#masterBookList').hide();
+  $('#reviewForm').hide();
   $('#review-prompt').hide();
-  $('#sign-in').show();
-  $('#sign-up').show();
+  $('#signIn').show();
+  $('#signUp').show();
   $('#book-burn-pic').show();
 };
 
