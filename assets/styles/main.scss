@@ -25,17 +25,13 @@ h3 {
   text-align: center;
 }
 
-h4 {
-  text-align: center;
-}
-
 img {
   border-radius: 10px 10px 0 0;
   width: 494px;
 }
 
 li {
-  border-bottom: 1px solid $black;
+  border-bottom: 2px solid $black;
 }
 
 .book-burn {
@@ -94,6 +90,11 @@ li {
   width: 30%;
 }
 
+.to-read li {
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
 .add-button {
   margin-bottom: 15px;
   margin-left: 20px;
@@ -115,16 +116,21 @@ li {
 }
 
 .author {
+  float: right;
   font-family: 'Bangers', cursive;
   font-size: 20px;
+  margin-right: 20px;
 }
 
 .remove-from-my-to-read-list-button {
   float: right;
   margin-right: 10px;
-  margin-top: 5px;
 };
 
+.noteSpaceHere {
+  border-bottom: 1px solid $black;
+  margin-top: 5px;
+}
 
 // .review-form-field {
 //   @include box-sizing(content-box);

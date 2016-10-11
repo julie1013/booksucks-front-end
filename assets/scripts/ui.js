@@ -70,7 +70,6 @@ const onChangePasswordSuccess = function (){
   console.log("Password successfully changed.");
 };
 
-
 // const onReadReviewSuccess = function(data){
 //   // data.user_id;
 //   // console.log(id);

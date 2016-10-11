@@ -5,7 +5,7 @@ const onShowMasterListSuccess = function (data){
   for (let i = 0; i < data.books.length; i++){
     id = data.books[i].id;
     $('.master-list ol').append('<li data-id=' + id + '>' +
-    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
+    '<span class=title>' + data.books[i].title +'</span>' +
     '<span class=author>' +  data.books[i].author + '</span>' +
     '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
     '<input type=submit value="Add to your to-read list">' + '</form>' +
