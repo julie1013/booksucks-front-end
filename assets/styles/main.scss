@@ -14,16 +14,9 @@ body {
   }
 
 h1 {
-  font-family: 'Bangers', cursive;
   font-size: 50px;
-  margin-left: 20px;
   width: 320px;
   }
-
-h3 {
-  font-family: 'Bangers', cursive;
-  text-align: center;
-}
 
 img {
   border-radius: 10px 10px 0 0;
@@ -34,24 +27,27 @@ li {
   border-bottom: 2px solid $black;
 }
 
-.book-burn {
-  @include box-sizing(content-box);
-  border: 1px solid $black;
-  border-radius: 10px;
-  margin: 0 auto;
-  margin-top: -170px;
-  text-align: center;
-  width: 494px;
-};
-
-.quote {
-  font-family: 'Dancing Script', cursive;
-  font-size: 25px;
+h1,
+h3,
+.sucks,
+.author {
+  font-family: 'Bangers', cursive;
 }
 
-.reviewer {
-  font-family: 'Bad Script', cursive;
-  font-size: 20px;
+h1,
+.add-button {
+  margin-left: 20px;
+}
+
+h3,
+.book-burn {
+  text-align: center;
+}
+
+.book-burn,
+.to-read,
+.note-space-here {
+  border: 1px solid $black;
 }
 
 .sign-up-form,
@@ -59,6 +55,42 @@ li {
 .change-password-form {
   margin-left: 35px;
   width: 154px;
+}
+
+.book-burn,
+.to-read,
+.master-list {
+  margin: 0 auto;
+}
+
+.title,
+.author {
+  font-size: 20px;
+}
+
+.to-read li {
+  padding: 15px 0 10px;
+}
+
+.to-read {
+  clear: both;
+  float: right;
+  margin: -500px 50px 0;
+  max-height: 500px;
+  overflow: scroll;
+  width: 30%;
+}
+
+.book-burn {
+  @include box-sizing(content-box);
+  border-radius: 10px;
+  margin-top: -170px;
+  width: 494px;
+};
+
+.quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
 }
 
 .sign-out-button {
@@ -74,36 +106,15 @@ li {
 }
 
 .sucks {
-  font-family: 'Bangers', cursive;
   font-size: 30px;
-}
-
-.to-read {
-  border: 1px solid $black;
-  clear: both;
-  float: right;
-  margin: 0 auto;
-  margin-right: 50px;
-  margin-top: -500px;
-  max-height: 500px;
-  overflow: scroll;
-  width: 30%;
-}
-
-.to-read li {
-  padding-bottom: 10px;
-  padding-top: 15px;
 }
 
 .add-button {
   margin-bottom: 15px;
-  margin-left: 20px;
 }
 
 .master-list {
-  border: 1px solid $black;
   height: 500px;
-  margin: 0 auto;
   margin-top: -100px;
   overflow: scroll;
   text-align: left;
@@ -112,13 +123,10 @@ li {
 
 .title {
   font-family: 'Bad Script', cursive;
-  font-size: 20px;
 }
 
 .author {
   float: right;
-  font-family: 'Bangers', cursive;
-  font-size: 20px;
   margin-right: 20px;
 }
 
@@ -127,8 +135,7 @@ li {
   margin-right: 10px;
 };
 
-.noteSpaceHere {
-  border-bottom: 1px solid $black;
+.note-space-here {
   margin-top: 5px;
 }
 
@@ -150,4 +157,9 @@ li {
 //   border: 1px solid $black;
 //   height: 400px;
 //   width: 450px;
+// }
+
+// .reviewer {
+//   font-family: 'Bad Script', cursive;
+//   font-size: 20px;
 // }

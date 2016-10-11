@@ -12,7 +12,7 @@ const onShowMyToReadListSuccess = function (data){
     qualifiedBookID = data[i].id;
     $('#to-read-list').append('<li data-id=' + qualifiedBookID + '>' +
     '<span class=title>' + data[i].book.title +'</span>' +
-    '<span class=author>' +  data[i].book.author + '</span>'+ '<p id="noteSpace" class="noteSpaceHere">Notes:</p>' +
+    '<span class=author>' +  data[i].book.author + '</span>'+ '<p id="noteSpace" class="note-space-here">Notes:</p>' +
     data[i].notes +
     '<form id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
     '<input type=submit value="Remove Book" >' + '</form>' +
