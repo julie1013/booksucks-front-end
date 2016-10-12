@@ -13,6 +13,17 @@ const onAddNote = function(event){
     .fail(uiAddNote.onError);
 };
 
+const onRemoveNote = function(event){
+  event.preventDefault();
+  let qualifiedBookID = $(this).parents().attr('id');
+  console.log(qualifiedBookID);
+  let params = {notes: "Your note shows here!"};
+  api.removeNote(params, qualifiedBookID)
+  .done(uiAddNote.onRemoveNoteSuccess)
+  .fail(uiAddNote.onError);
+};
+
 module.exports = {
   onAddNote,
+  onRemoveNote,
 };

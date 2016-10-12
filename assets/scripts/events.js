@@ -35,25 +35,16 @@ const onChangePassword = function (event) {
     .fail(ui.onError);
 };
 
-  const onRemoveBookFromMyToReadList = function(event) {
-    event.preventDefault();
-    let qualifiedBookID = $(this).parents().attr('id');
-    $(this).parent().remove();
-    ui.onRemoveBookFromMyToReadListSuccess();
-    api.removeBookFromMyToReadList(qualifiedBookID)
-    .done(ui.removeBookFromMyToReadList)
-    .fail(ui.onError);
-  };
+const onRemoveBookFromMyToReadList = function(event) {
+  event.preventDefault();
+  let qualifiedBookID = $(this).parents().attr('id');
+  $(this).parent().remove();
+  ui.onRemoveBookFromMyToReadListSuccess();
+  api.removeBookFromMyToReadList(qualifiedBookID)
+  .done(ui.removeBookFromMyToReadList)
+  .fail(ui.onError);
+};
 
-
-    // const onRemoveNote = function(event){
-    //   event.preventDefault();
-    //   let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
-    //   let params = getFormFields(event.target);
-    //   api.removeNote(qualifiedBookID, params)
-    //   .done(ui.onRemoveNoteSuccess)
-    //   .fail(ui.onError)
-    // };
 
   // const onReadReviews = function (){
   //   let id = $(this).parent().attr('id');

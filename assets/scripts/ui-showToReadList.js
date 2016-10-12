@@ -1,7 +1,5 @@
 'use strict';
-const events = require('./events');
 const onAddNote = require('./addNote');
-
 
 const onShowMyToReadListSuccess = function (data){
   $('#toReadList').children(':not("h3")').remove();
@@ -41,7 +39,8 @@ const onShowMyToReadListSuccess = function (data){
     } else {
       $('#removeNote' + qualifiedBookID).show();
       $('#addNote' + qualifiedBookID).hide();
-      $('#removeNote' + qualifiedBookID).on('submit', events.onRemoveNote);
+      $('#removeNote' + qualifiedBookID).on('submit', onAddNote.onRemoveNote);
+      $('#noteSpace' + qualifiedBookID).html(data[i].notes);
     }
   }
 };

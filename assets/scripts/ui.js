@@ -18,10 +18,6 @@ const onRemoveBookFromMyToReadListSuccess = function(){
   $('#signUpInOut').html("Yeah, that book sucks too much!");
 };
 
-// const onRemoveNoteSuccess = function(){
-//   console.log("Hi");
-// };
-
 const onSignInSuccess = function (data) {
     app.user = data.user;
     $('#signUpInOut').html("You are now signed in!");
