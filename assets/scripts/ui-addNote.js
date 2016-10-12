@@ -1,9 +1,10 @@
 'use strict';
 
 const onAddNoteSuccess = function(data){
-    $('#toReadList [id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
-    $('.add-note').hide();
-    $('.remove-note').show();
+  console.log('#noteSpace' + data.qualified_book.id);
+    $('#noteSpace' + data.qualified_book.id).html(data.qualified_book.notes);
+    $('#addNote'+ data.qualified_book.id).hide();
+    $('#removeNote'+ data.qualified_book.id).show();
 };
 
 const onError = function () {
