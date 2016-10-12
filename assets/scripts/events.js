@@ -35,38 +35,23 @@ const onChangePassword = function (event) {
     .fail(ui.onError);
 };
 
-const onAddToMyToReadList = function (event) {
+const onRemoveBookFromMyToReadList = function(event) {
   event.preventDefault();
-  // let data = getFormFields(event.target);
-  let id = $(this).parent().attr('id');
-  api.addToMyToReadList(id)
-    .done(ui.onAddToMyToReadListSuccess)
-    .fail(ui.onError);
-  };
-
-  const onShowMyToReadList = function (event){
-    event.preventDefault();
-    api.showMyToReadList()
-    .done(ui.onShowMyToReadListSuccess)
-    .fail(ui.onError);
-  };
+  let qualifiedBookID = $(this).parents().attr('id');
+  $(this).parent().remove();
+  ui.onRemoveBookFromMyToReadListSuccess();
+  api.removeBookFromMyToReadList(qualifiedBookID)
+  .done(ui.removeBookFromMyToReadList)
+  .fail(ui.onError);
+};
 
 
-  const onRemoveBookFromMyToReadList = function(event) {
-    event.preventDefault();
-    $(this).parent().remove();
-    ui.onRemoveBookFromMyToReadListSuccess();
-    api.removeBookFromMyToReadList()
-    .done(ui.removeBookFromMyToReadList)
-    .fail(ui.onError);
-  };
-
-  const onReadReviews = function (){
-    let id = $(this).parent().attr('id');
-    api.readReviews(id)
-    .done(ui.onReadReviewsSuccess)
-    .fail(ui.error);
-  };
+  // const onReadReviews = function (){
+  //   let id = $(this).parent().attr('id');
+  //   api.readReviews(id)
+  //   .done(ui.onReadReviewsSuccess)
+  //   .fail(ui.error);
+  // };
 
   // const onSubmitReview = function (event){
   //   event.preventDefault();
@@ -88,9 +73,8 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword,
-  onAddToMyToReadList,
   onRemoveBookFromMyToReadList,
-  onReadReviews,
-  onShowMyToReadList,
+  // onRemoveNote,
+  // onReadReviews,
   // onSubmitReview,
 };

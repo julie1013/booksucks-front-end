@@ -2,78 +2,74 @@
 
 const app = require('./app');
 const masterList = require('./masterlist');
-const addBackend = require('./backendtoread');
+const showToReadList = require('./showToReadList.js');
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log(data);
+    $('#signUpInOut').html("You are signed up! Now sign in!");
   }
 };
 
-const onError = function (response) {
-  $('.display-stats').html(response);
+const onError = function () {
+  $('#signUpInOut').html("Sorry, there was an error");
 };
 
-const onShowMyToReadListSuccess = function (data){
-  $('#to-read-list').children(':not("h4")').remove();
-  let bookID;
-  for(let i = 0; i < data.books.length; i++){
-    bookID = parseFloat(data.books[i].id);
-    $('#to-read-list').append('<li id=' + bookID + '>' +
-    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
-    '<span class=author>' +  data.books[i].author + '</span>'+
-    '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
-    '</form>' + ' </li>');
-  }
+const onRemoveBookFromMyToReadListSuccess = function(){
+  $('#signUpInOut').html("Yeah, that book sucks too much!");
 };
 
 const onSignInSuccess = function (data) {
     app.user = data.user;
-    $('#master-ordered-list').empty();
+    $('#signUpInOut').html("You are now signed in!");
+    $('#masterOrderedList').empty();
     masterList.onShowMasterList();
+    showToReadList.onShowMyToReadList();
     $('#book-burn-pic').hide();
-    $('#sign-in').hide();
-    $('#sign-up').hide();
-    $('#sign-out').show();
-    $('#change-password').show();
-    $('#to-read-list').show();
-    $('#to-read-list h4').show();
-    $('#master-book-list').show();
+    $('#signIn').hide();
+    $('#signUp').hide();
+    $('#signOut').show();
+    $('#changePassword').show();
+    $('#toReadListDiv').show();
+    $('#toReadListDiv').children().show();
+    $('#masterBookList').show();
+    $('h3').show();
     $('#show-my-to-read-list').show();
-    $('#review-prompt').show();
+    $('.add-note').show();
+    // $('#review-prompt').show();
 };
 
 const onSignOutSuccess = function (){
-  $('#sign-out').hide();
-  $('#change-password').hide();
-  app.user = null;
-  console.log("You are now signed out.");
-  $('#sign-out').hide();
-  $('#change-password').hide();
-  $('#to-read-list').hide();
-  $('#master-book-list').hide();
-  $('#review-form').hide();
+  $('#signUpInOut').html("Bye!");
+  $('#signOut').hide();
+  $('#changePassword').hide();
+  $('#signOut').hide();
+  $('#changePassword').hide();
+  $('#to-read-list').children(':not("h4")').remove();
+  $('#toReadListDiv').hide();
+  $('#show-my-to-read-list').hide();
+  $('#masterBookList').hide();
+  $('#reviewForm').hide();
   $('#review-prompt').hide();
-  $('#sign-in').show();
-  $('#sign-up').show();
+  $('#signIn').show();
+  $('#signUp').show();
   $('#book-burn-pic').show();
 };
 
 const onChangePasswordSuccess = function (){
-  console.log("Password successfully changed.");
+  $('#signUpInOut').html("Password successfully changed!");
 };
 
-const onAddToMyToReadListSuccess = function (data){
-  $('.to-read ol').append('<li>' + '<span class=title>' + data.book.title +
-  '</span>' + ' , by ' + '<span class=author>' +  data.book.author + '</span>' +
-  '<form>'+ '<input type=submit value="Remove from your list" id=remove-from-my-to-read-list class=remove-from-my-to-read-list-button>' +
-   '</form>' + '</li>');
-   addBackend.onAddBackendToReadList(data);
-};
+// const onReadReviewSuccess = function(data){
+//   // data.user_id;
+//   // console.log(id);
+//   // $('.to-read ol').html('');
+//   // $('.to-read ol').append(data.)
+// };
+//
+// const onSubmitReviewSuccess = function(data){
+//   // console.log(data);
+// };
 
-const onRemoveBookFromMyToReadListSuccess = function(data){
-  console.log(data);
-};
 
 // const onReadReviewSuccess = function(data){
 //   // data.user_id;
@@ -90,13 +86,12 @@ const onRemoveBookFromMyToReadListSuccess = function(data){
 
 module.exports = {
   onSignUpSuccess,
-  onError,
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
-  onAddToMyToReadListSuccess,
-  onShowMyToReadListSuccess,
   onRemoveBookFromMyToReadListSuccess,
-  // onSubmitReviewSuccess,
+  onError,
+  // onRemoveNoteSuccess,
   // onReadReviewSuccess,
+  // onSubmitReviewSuccess,
 };

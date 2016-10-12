@@ -41,17 +41,66 @@ const changePassword = function(data){
   });
 };
 
-const addToMyToReadList = function(id){
+const addToMyToReadList = function(bookID) {
   return $.ajax({
-    url: app.host + '/books/' + id,
-    method: 'GET',
+    url: app.host + '/qualified_books',
+    method: 'POST',
+    data: {
+      qualified_book : { book_id: bookID }
+    },
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
   });
 };
-//Grabs book from master list on server and transfers it to front-end
-//to-read-list
+
+const showMyToReadList = function(){
+    return $.ajax({
+        url: app.host + '/qualified_books',
+        method: 'GET',
+        headers: {
+            Authorization: 'Token token=' + app.user.token,
+        },
+    });
+};
+
+const removeBookFromMyToReadList = function(qualifiedBookID){
+  return  $.ajax({
+    url: app.host + '/qualified_books/' + qualifiedBookID,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const addNote = function(params, qualifiedBookID){
+  return $.ajax({
+    url: app.host + '/qualified_books/' + qualifiedBookID,
+    method: 'PATCH',
+    data: {
+      qualified_book : params
+    },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const removeNote = function(params, qualifiedBookID){
+  return $.ajax({
+    url: app.host + '/qualified_books/' + qualifiedBookID,
+    method: 'PATCH',
+    data: {
+      qualified_book : params
+    },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+
 
 const showMasterList = function(){
   return $.ajax({
@@ -60,49 +109,6 @@ const showMasterList = function(){
   headers: {
     Authorization: 'Token token=' + app.user.token,
     },
-  });
-};
-
-const showMyToReadList = function(){
-  return $.ajax({
-    url: app.host + '/my_books',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
-
-
-const addBackendToReadList = function(data){
-  return $.ajax({
-    url: app.host + '/qualified_books/',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: { qualified_book: {
-      user_id: app.user.id,
-      book_id: data.book.id
-      }
-    },
-    dataType: 'json'
-  });
-};
-
-const removeBookFromMyToReadList = function(data){
-  return  $.ajax({
-    url: app.host + '/qualified_books/',
-    method: "DELETE",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: { qualified_book: {
-      // user_id: app.user.id,
-      book_id: data.book.id
-      }
-    },
-    dataType: 'json'
   });
 };
 
@@ -126,6 +132,25 @@ const removeBookFromMyToReadList = function(data){
 // };
 
 
+// const readReviews = function(id){
+//   return $.ajax({
+//     url: app.host + '/reviews',
+//     method: 'GET',
+//   });
+// };
+//
+// const submitReview = function(data, bookID){
+//   let id = app.user.id;
+//   return  $.ajax({
+//     url: app.host + '/users/' + id + '/reviews/' + bookID,
+//     method: "POST",
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: data,
+//   });
+// };
+
 
 
 
@@ -137,8 +162,9 @@ module.exports = {
   addToMyToReadList,
   showMasterList,
   showMyToReadList,
-  addBackendToReadList,
   removeBookFromMyToReadList,
-  // submitReview,
+  addNote,
+  removeNote,
   // readReviews,
+  // submitReview,
 };

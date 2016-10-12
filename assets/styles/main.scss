@@ -14,63 +14,117 @@ body {
   }
 
 h1 {
-  font-family: 'Bangers', cursive;
-  font-size: 50px;
-  margin-left: 20px;
   width: 320px;
   }
-
-h3 {
-  font-family: 'Bangers', cursive;
-  text-align: center;
-}
-
-h4 {
-  text-align: center;
-}
 
 img {
   border-radius: 10px 10px 0 0;
   width: 494px;
 }
 
-li {
-  border-bottom: 1px solid $black;
+li,
+.note-space-here {
+  border-bottom: 2px solid $black;
 }
 
-.book-burn {
-  @include box-sizing(content-box);
-  border: 1px solid $black;
-  border-radius: 10px;
-  margin: 0 auto;
-  margin-top: -170px;
+h1,
+h3,
+.sucks,
+.author,
+.sign-up-in-out-space {
+  font-family: 'Bangers', cursive;
+}
+
+h1,
+.add-button {
+  margin-left: 20px;
+}
+
+h1,
+.book-burn .sucks {
+  font-size: 50px;
+}
+
+h3,
+.book-burn,
+.sign-up-in-out-space {
   text-align: center;
-  width: 494px;
-};
-
-.quote {
-  font-family: 'Dancing Script', cursive;
-  font-size: 25px;
 }
 
-.reviewer {
-  font-family: 'Bad Script', cursive;
-  font-size: 20px;
+.sign-up-form,
+.sign-in-form,
+.change-password-form,
+.sign-up-in-out-space {
+  margin-left: 35px;
+  width: 154px;
+}
+
+.master-list,
+.book-burn,
+.to-read,
+.sign-up-in-out-space {
+  border: 1px solid $black;
+}
+
+
+.book-burn,
+.to-read,
+.master-list {
+  margin: 0 auto;
+}
+
+.to-read,
+.author,
+.remove-from-my-to-read-list {
+  float: right;
 }
 
 .sign-up-form,
 .sign-in-form,
 .change-password-form {
-  margin-left: 35px;
-  width: 154px;
+  margin-bottom: 10px;
+}
+
+.title,
+.author,
+.sign-up-in-out-space {
+  font-size: 20px;
+}
+
+.book-burn,
+.sign-up-in-out-space {
+  border-radius: 10px;
+}
+
+.to-read li {
+  padding: 15px 0 10px;
+}
+
+.master-list li {
+  padding-top: 5px;
+}
+
+.to-read {
+  clear: both;
+  margin: -500px 75px 0;
+  max-height: 500px;
+  overflow: scroll;
+  width: 30%;
+}
+
+.book-burn {
+  @include box-sizing(content-box);
+  margin-top: -320px;
+  width: 494px;
+};
+
+.intro {
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
 }
 
 .sign-out-button {
   margin-left: 35px;
-}
-
-.sign-up-form {
-  margin-bottom: 10px;
 }
 
 .change-password-form {
@@ -78,41 +132,45 @@ li {
 }
 
 .sucks {
-  font-family: 'Bangers', cursive;
   font-size: 30px;
 }
 
-.to-read {
-  border: 1px solid $black;
-  clear: both;
-  float: right;
-  margin: 0 auto;
-  margin-right: 50px;
-  margin-top: -577px;
-  width: 30%;
-}
-
-.add-button {
-  margin-left: 20px;
+.add-to-my-to-read-list {
+  margin-bottom: 15px;
 }
 
 .master-list {
-  border: 1px solid $black;
-  margin: 0 auto;
-  margin-top: -100px;
+  height: 500px;
+  margin-right: 525px;
+  margin-top: -225px;
+  overflow: scroll;
   text-align: left;
   width: 30%;
 }
 
 .title {
   font-family: 'Bad Script', cursive;
-  font-size: 20px;
 }
 
 .author {
-  font-family: 'Bangers', cursive;
-  font-size: 20px;
+  margin-right: 20px;
 }
+
+.remove-from-my-to-read-list {
+  margin-right: 10px;
+};
+
+.note-space-here {
+  margin-top: 5px;
+}
+
+.sign-up-in-out-space {
+  height: 100px;
+  padding-top: 20px;
+  width: 200px;
+}
+
+
 
 // .review-form-field {
 //   @include box-sizing(content-box);

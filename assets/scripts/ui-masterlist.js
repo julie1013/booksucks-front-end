@@ -1,23 +1,23 @@
 'use strict';
 
+const onAddRead = require('./onAddRead');
+
 const onShowMasterListSuccess = function (data){
   let id;
   for (let i = 0; i < data.books.length; i++){
-    id = parseFloat(data.books[i].id);
-    $('.master-list ol').append('<li id=' + id + '>' +
-    '<span class=title>' + data.books[i].title +'</span>' + ' , by ' +
+    id = data.books[i].id;
+    $('.master-list ol').append('<li data-id=' + id + '>' +
+    '<span class=title>' + data.books[i].title +'</span>' +
     '<span class=author>' +  data.books[i].author + '</span>' +
-    '<form id=add-to-my-to-read-list class=add-to-my-to-read-list-button>'+
-      '<input type=submit value="Add to your to-read list">' + '</form>' +
-      '<form id=read class=read-button>' +
-      '<input type=submit value="Read reviews!">' + '</form>' +
-      '<button id=write class=write-button>' + 'Write a scathing review!' +
-      '</button>' + '</li>');
+    '<form id=addToMyToReadList' + i + ' class=add-to-my-to-read-list>'+
+    '<input type=submit value="Add to your to-read list">' + '</form>' +
+    '</li>');
+    $('#addToMyToReadList' + i).on('submit', onAddRead.onAddToMyToReadList);
   }
 };
 
-const onError = function (response) {
-  $('.display-stats').html(response);
+const onError = function () {
+  $('#signUpInOut').html("Sorry, there was an error");
 };
 
 module.exports = {
