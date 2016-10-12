@@ -18,11 +18,6 @@ const onRemoveBookFromMyToReadListSuccess = function(){
   $('#signUpInOut').html("Yeah, that book sucks too much!");
 };
 
-const onAddNoteSuccess = function(data){
-    $('.note-space').remove();
-    $('#toReadList [data-id="'+ data.qualified_book.id +'"]').append(data.qualified_book.notes);
-};
-
 // const onRemoveNoteSuccess = function(){
 //   console.log("Hi");
 // };
@@ -88,7 +83,6 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onRemoveBookFromMyToReadListSuccess,
-  onAddNoteSuccess,
   onError,
   // onRemoveNoteSuccess,
   // onReadReviewSuccess,

@@ -37,7 +37,7 @@ const onChangePassword = function (event) {
 
   const onRemoveBookFromMyToReadList = function(event) {
     event.preventDefault();
-    let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
+    let qualifiedBookID = $(this).parents().attr('id');
     $(this).parent().remove();
     ui.onRemoveBookFromMyToReadListSuccess();
     api.removeBookFromMyToReadList(qualifiedBookID)
@@ -45,14 +45,6 @@ const onChangePassword = function (event) {
     .fail(ui.onError);
   };
 
-  const onAddNote = function(event){
-    event.preventDefault();
-    let qualifiedBookID = $(this).parents('[data-id]').attr('data-id');
-    let params = getFormFields(event.target);
-    api.addNote(params, qualifiedBookID)
-      .done(ui.onAddNoteSuccess)
-      .fail(ui.onError);
-  };
 
     // const onRemoveNote = function(event){
     //   event.preventDefault();
@@ -91,7 +83,6 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onRemoveBookFromMyToReadList,
-  onAddNote,
   // onRemoveNote,
   // onReadReviews,
   // onSubmitReview,

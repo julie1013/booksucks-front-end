@@ -1,5 +1,6 @@
 'use strict';
 const events = require('./events');
+const onAddNote = require('./addNote');
 
 
 const onShowMyToReadListSuccess = function (data){
@@ -19,24 +20,24 @@ const onShowMyToReadListSuccess = function (data){
     '<span class=title>' + data[i].book.title +'</span>' +
     //each list item has a title...
     '<span class=author>' +  data[i].book.author + '</span>'+ '<p id=noteSpace' + i +
-     ' class="note-space-here">Notes:</p>' + data[i].notes +
+     ' class="note-space-here">Notes:</p>' + '<p class=def-note>' + data[i].notes +
     //...and an author... and a space where you can see a note...
-    '<form id=removeFromMyToReadList' + i + ' class=remove-from-my-to-read-list>' +
+    '</p>' + '<form id=removeFromMyToReadList' + i + ' class=remove-from-my-to-read-list>' +
     //...and each note is given a form button to enable removal
-    '<input type=Submit value="Remove Book">' + '</form>' +
+    '<input type=submit value="Remove Book">' + '</form>' +
     //...and each book on the list has a removal option...
-    '<form id=addNote' + i + ' class="add-note">' + '<input type=Submit value="Write a note?">' +
+    '<form id=addNote' + i + ' class="add-note">' + '<input type=submit value="Write a note?">' +
     //...and this is the field in which you can type your note; field button included
     '<input name="notes"' + 'input type="text"'+ 'value="">' + '</form>' +
     //...the rest of the notes form
-    '<form id=removeNote' + i + ' class="remove-notes">' + '<input type=Submit value="Remove Note">' +
+    '<form id=removeNote' + i + ' class="remove-note">' + '<input type=submit value="Remove Note">' +
     //...option to remove note
     '</form>' + '</li>');
     //...list item closed
     if (data[i].notes === "Your note shows here!"){
       $('#removeNote' + i).hide();
       $('#addNote' + i).show();
-      $('#addNote' + i).on('click', events.onAddNote);
+      $('#addNote' + i).on('submit', onAddNote.onAddNote);
     } else {
       $('#removeNote' + i).show();
       $('#addNote' + i).hide();
