@@ -32,7 +32,7 @@ lack of time-- that will come out in the next version).
 
 I also would have liked to have more time to give the app a better visual design.
 
-App as it stands now: https://julie1013.github.io/booksucks-front-end/
+App in its current version: https://julie1013.github.io/booksucks-front-end/
 Link to back end: https://github.com/julie1013/booksucks-api
 Wireframe 1: https://github.com/julie1013/booksucks-front-end/blob/master/IMG_1899.JPG
 Wireframe 2: https://github.com/julie1013/booksucks-front-end/blob/master/IMG_1898.JPG
