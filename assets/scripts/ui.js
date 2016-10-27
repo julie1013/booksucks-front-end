@@ -29,6 +29,7 @@ const onSignInSuccess = function (data) {
     $('#signUp').hide();
     $('#signOut').show();
     $('#changePassword').show();
+    $('body').addClass('list-view');
     $('#toReadListDiv').show();
     $('#toReadListDiv').children().show();
     $('#masterBookList').show();
