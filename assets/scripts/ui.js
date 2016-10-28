@@ -31,8 +31,6 @@ const onSignInSuccess = function (data) {
     $('#changePassword').show();
     $('body').addClass('list-view');
     $('#listViewState').show();
-    // $('#toReadListDiv').show();
-    // $('#toReadListDiv').children().show();
     $('#masterBookList').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
