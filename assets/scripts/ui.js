@@ -29,12 +29,15 @@ const onSignInSuccess = function (data) {
     $('#signUp').hide();
     $('#signOut').show();
     $('#changePassword').show();
-    $('body').addClass('list-view');
     $('#listViewState').show();
     $('#masterBookList').show();
     $('h3').show();
     $('#show-my-to-read-list').show();
     $('.add-note').show();
+    $('body').css({ 'background-image' : 'url("../../assets/images/bookshelves.jpg")',
+                    'background-repeat'  : 'none',
+                    'background-size' : 'cover'
+  });
     // $('#review-prompt').show();
 };
 
@@ -53,6 +56,7 @@ const onSignOutSuccess = function (){
   $('#signIn').show();
   $('#signUp').show();
   $('#book-burn-pic').show();
+  $('body').removeClass('list-view');
 };
 
 const onChangePasswordSuccess = function (){
