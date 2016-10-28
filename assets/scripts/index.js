@@ -3,6 +3,10 @@
 const events = require('./events');
 
 $(document).ready(function () {
+  require('./router/index').start();
+  require('./router/events').registerPaths();
+
+
   $('#signUp').on('submit', events.onSignUp);
   $('#signIn').on('submit', events.onSignIn);
   $('#signOut').on('submit', events.onSignOut);
