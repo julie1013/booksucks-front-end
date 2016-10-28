@@ -30,8 +30,9 @@ const onSignInSuccess = function (data) {
     $('#signOut').show();
     $('#changePassword').show();
     $('body').addClass('list-view');
-    $('#toReadListDiv').show();
-    $('#toReadListDiv').children().show();
+    $('#listViewState').show();
+    // $('#toReadListDiv').show();
+    // $('#toReadListDiv').children().show();
     $('#masterBookList').show();
     $('h3').show();
     $('#show-my-to-read-list').show();

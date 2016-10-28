@@ -60,12 +60,14 @@ h3,
   width: 154px;
 }
 
+.this-book-sucks,
 .master-list,
 .book-burn,
 .to-read,
 .sign-up-in-out-space {
   background: $white;
   border: 1px solid $black;
+  border-radius: 10px;
 }
 
 
@@ -177,6 +179,12 @@ h3,
   background-size: cover;
 }
 
+.this-book-sucks {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 25%;
+}
 
 
 
